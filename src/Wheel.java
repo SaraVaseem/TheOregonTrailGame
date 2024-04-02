@@ -1,3 +1,3 @@
-public class Wheel {
-    
+public class Wheel extends SparePart{
 }
+

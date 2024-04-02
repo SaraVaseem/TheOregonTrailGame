@@ -1,3 +1,2 @@
-public class Axle {
-    
+public class Axle extends SparePart {
 }
