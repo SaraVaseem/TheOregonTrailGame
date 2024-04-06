@@ -10,11 +10,21 @@ public class Inventory {
     //                      cash (each 5 dollars) = 1 point
     private ArrayList<Item> completeInventory = new ArrayList<>();
 
+    public Inventory(Food food, Oxen oxen, ClothingSet clothes, Bullets bullets, Tongue tongue, Axle axle, Wheel wheel){
+        addItem(food);
+        addItem(oxen);
+        addItem(clothes);
+        addItem(bullets);
+        addItem(tongue);
+        addItem(axle);
+        addItem(wheel);
+    }
+
     public void addItem(Item item){
-        completeInventory.add(item);
+        this.completeInventory.add(item);
     }
 
     public void removeItem(Item item){
-        completeInventory.remove(item);
+        this.completeInventory.remove(item);
     }
 }
