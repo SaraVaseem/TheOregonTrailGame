@@ -59,6 +59,10 @@ public class Wagon {
 
     }
 
+    public void updateMoney(double amount){
+        this.moneyLeft -= amount;
+    }
+
     public void huntForFood(int c){
 
     }
