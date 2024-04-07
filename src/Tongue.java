@@ -1,3 +1,2 @@
-public class Tongue {
-    
+public class Tongue extends SparePart {
 }

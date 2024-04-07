@@ -1,3 +1,3 @@
-public class Oxen {
+public class Oxen extends Item{
     
 }
