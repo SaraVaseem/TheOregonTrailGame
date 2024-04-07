@@ -1,3 +1,2 @@
-public class SparePart {
-    
+public abstract class SparePart extends Item{
 }
