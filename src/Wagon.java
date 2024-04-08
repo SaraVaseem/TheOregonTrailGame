@@ -11,7 +11,7 @@ public class Wagon {
     private boolean wagonFunctional;
     private int points;
 
-    public Wagon(WagonMember member1, WagonMember member2, WagonMember member3, WagonMember member4, WagonMember member5){
+    public Wagon(WagonMember member1, WagonMember member2, WagonMember member3, WagonMember member4, WagonMember member5, int points){
         this.listOfMembers.add(member1);
         this.listOfMembers.add(member2);
         this.listOfMembers.add(member3);
@@ -21,6 +21,7 @@ public class Wagon {
         this.pace = "Steady";
         this.rations = "Filling";
         this.livingMembers = 5;
+        this.points = points;
     }
 
     public void setPace(String pace, ArrayList<WagonMember> listOFMembers){
@@ -109,7 +110,7 @@ public class Wagon {
         Random rand = new Random();
         int random = rand.nextInt(5);
         if(random == 1){ // 1/5 chance of shooting something
-            random = rand.nextInt(8); // different probabilities of type of animal hunted
+            random = rand.nextInt(10); // different probabilities of type of animal hunted
             if(random == 0 || random == 1 || random == 2){
                 System.out.println("You shot a rabbit. +4 lbs of food.");
                 food.setCount(food.getCount()+4);
@@ -119,6 +120,9 @@ public class Wagon {
             } else if(random == 6 || random == 7){
                 System.out.println("You shot a deer. +50 lbs of food.");
                 food.setCount(food.getCount()+50);
+            } else if(random == 8){
+                System.out.println("You shot a buffalo. +75 lbs of food.");
+                food.setCount(food.getCount()+75);
             } else {
                 System.out.println("You shot a bear. +100 lbs of food.");
                 food.setCount(food.getCount()+100);
