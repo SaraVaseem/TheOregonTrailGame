@@ -128,6 +128,6 @@ public class Wagon {
                 food.setCount(food.getCount()+100);
             }
         }
-        bullets.setCount(bullets.getCount()-1);
+        bullets.shoot();
     }
 }

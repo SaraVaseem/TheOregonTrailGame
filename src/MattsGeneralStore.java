@@ -27,6 +27,8 @@ public class MattsGeneralStore {
         }
     }
 
-
+    public double getTotalCost(){
+        return this.totalCost;
+    }
 
 }
