@@ -1,5 +1,4 @@
 import java.util.HashMap;
-import java.util.ArrayList;
 
 public class MattsGeneralStore {
     private HashMap<String, Double> prices;
