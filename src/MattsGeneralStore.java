@@ -1,22 +1,33 @@
 import java.util.HashMap;
+import java.util.ArrayList;
 
 public class MattsGeneralStore {
     private HashMap<String, Double> prices;
+    private double totalCost;
 
     public MattsGeneralStore(){
         // update prices later
-        prices.put("food", 1.0);
-        prices.put("oxen", 1.0);
-        prices.put("clothes", 1.0);
-        prices.put("bullets", 1.0);
-        prices.put("tongue", 1.0);
-        prices.put("axle", 1.0);
-        prices.put("wheel", 1.0);
+        prices.put("food", 0.20);
+        prices.put("oxen", 40.0);
+        prices.put("clothes", 10.0);
+        prices.put("bullets", 2.0);
+        prices.put("tongue", 10.0);
+        prices.put("axle", 10.0);
+        prices.put("wheel", 10.0);
     }
     
-    public void sell(String item, int count, Wagon wagon){
+    public void sell(String key, int count, Wagon wagon, Item item){
         double cost;
-        cost = prices.get(item) * count;
+        cost = prices.get(key) * count;
         wagon.updateMoney(cost);
+        this.totalCost += cost;
+        if(item instanceof Bullets){
+            item.setCount(item.getCount()+count*20);
+        } else{
+            item.setCount(item.getCount()+count);
+        }
     }
+
+
+
 }
