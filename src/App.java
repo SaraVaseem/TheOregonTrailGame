@@ -65,13 +65,25 @@ public class App {
             "        what is your choice ?");
         int role = myObj.nextInt();
 
+        int money;
+        int multiplier;
+        String occupation;
         //add role functionality
         if (role == 1) {
             //+1600 money left & normal points
+            occupation = "banker";
+            money = 1600;
+            multiplier = 1;
         } else if (role == 2) {
             //+800 money left & twice as many points
+            occupation = "carpenter";
+            money = 800;
+            multiplier = 2;
         } else if (role == 3) {
             //+ 400 money left & thrice as many points
+            occupation = "farmer";
+            money = 400;
+            multiplier = 3;
         } else if (role == 4) {
             System.out.println("------------------------------------------\r\n" + //
                 "            Traveling to Oregon isn't easy! But if you're a banker, you'll have more money for supplies\r\n" + //
@@ -112,6 +124,12 @@ public class App {
 
         if (verify == "yes") {
             //continue
+            WagonLeader wagonLeader = new WagonLeader(wagon_leader_name, occupation);
+            WagonMember member1 = new WagonMember(member_1);
+            WagonMember member2 = new WagonMember(member_2);
+            WagonMember member3 = new WagonMember(member_3);
+            WagonMember member4 = new WagonMember(member_4);
+            Wagon wagon = new Wagon(wagonLeader, member1, member2, member3, member4, multiplier, money);
         } else {
             //go back to user name prompt 
         }
@@ -209,6 +227,7 @@ public class App {
         int store_choice = myObj.nextInt();
 
         //add Matt's store functionality
+        MattsGeneralStore store = new MattsGeneralStore();
         if (store_choice == 1) {
             System.out.println("\r\n" + //
                 "\r\n" + //
@@ -222,9 +241,12 @@ public class App {
                 "\r\n" + //
                 "How many yoke do you want ?");
             int num_of_yokes = myObj.nextInt();
+
             //calculate price
+            Oxen oxen = new Oxen();
+            store.sell("oxen", num_of_yokes, wagon, oxen);
             System.out.println("\r\n" +
-                "            Bill so far: " /* +  bill */ );
+                "            Bill so far: "+ store.getTotalCost() );
             //go back to main store
 
         } else if (store_choice == 2) {
@@ -244,8 +266,10 @@ public class App {
                 "How many pounds of food do you want ?");
             int pounds_of_food = myObj.nextInt();
             //calculate price
+            Food food = new Food();
+            store.sell("food", pounds_of_food, wagon, food);
             System.out.println("\r\n" +
-                "            Bill so far: " /* + bill */ );
+                "            Bill so far: " +store.getTotalCost());
             //go back to main store
 
         } else if (store_choice == 3) {
@@ -265,8 +289,10 @@ public class App {
                 "How many sets of clothes do you want ?");
             int sets_of_clothing = myObj.nextInt();
             //calculate price
+            ClothingSet clothes = new ClothingSet();
+            store.sell("clothes", sets_of_clothing, wagon, clothes);
             System.out.println("\r\n" +
-                "            Bill so far: " /* + bill */ );
+                "            Bill so far: "+store.getTotalCost());
             //go back to main store
 
         } else if (store_choice == 4) {
@@ -285,8 +311,10 @@ public class App {
                 "How many boxes do you want?");
             int boxes_of_ammo = myObj.nextInt();
             //calculate price
+            Bullets bullets = new Bullets();
+            store.sell("bullets", boxes_of_ammo, wagon, bullets);
             System.out.println("\r\n" +
-                "            Bill so far: " /* + bill */ );
+                "            Bill so far: "+store.getTotalCost());
             //go back to main store
 
         } else if (store_choice == 5) {
@@ -331,8 +359,14 @@ public class App {
             }
 
             //calculate price
+            Wheel wheel = new Wheel();
+            store.sell("wheel", wheels, wagon, wheel);
+            Axle axle = new Axle();
+            store.sell("axle", axles, wagon, axle);
+            Tongue tongue = new Tongue();
+            store.sell("tongue", tongues, wagon, tongue);
             System.out.println("\r\n" +
-                "            Bill so far: " /* + bill */ );
+                "            Bill so far: "+store.getTotalCost());
             //go back to main store
         } else if (store_choice == 6) {
             //add items to invemtory & subtract from money left

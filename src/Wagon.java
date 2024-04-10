@@ -10,8 +10,9 @@ public class Wagon {
     private double moneyLeft;
     private boolean wagonFunctional;
     private int points;
+    private int pointMultiplier;
 
-    public Wagon(WagonMember member1, WagonMember member2, WagonMember member3, WagonMember member4, WagonMember member5, int points){
+    public Wagon(WagonMember member1, WagonMember member2, WagonMember member3, WagonMember member4, WagonMember member5, int multiplier, int money){
         this.listOfMembers.add(member1);
         this.listOfMembers.add(member2);
         this.listOfMembers.add(member3);
@@ -21,7 +22,8 @@ public class Wagon {
         this.pace = "Steady";
         this.rations = "Filling";
         this.livingMembers = 5;
-        this.points = points;
+        this.pointMultiplier = multiplier;
+        this.moneyLeft = money;
     }
 
     public void setPace(String pace, ArrayList<WagonMember> listOFMembers){
@@ -129,5 +131,9 @@ public class Wagon {
             }
         }
         bullets.shoot();
+    }
+
+    public int calculatePoints(){
+        return points * pointMultiplier;
     }
 }
