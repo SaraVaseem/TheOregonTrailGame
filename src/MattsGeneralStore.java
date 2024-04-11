@@ -1,7 +1,7 @@
 import java.util.HashMap;
 
 public class MattsGeneralStore {
-    private HashMap<String, Double> prices;
+    private HashMap<String, Double> prices = new HashMap<>();
     private double totalCost;
 
     public MattsGeneralStore(){

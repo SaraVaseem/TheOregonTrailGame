@@ -27,4 +27,8 @@ public class Inventory {
     public void removeItem(Item item){
         this.completeInventory.remove(item);
     }
+
+    public ArrayList<Item> getList(){
+        return this.completeInventory;
+    }
 }

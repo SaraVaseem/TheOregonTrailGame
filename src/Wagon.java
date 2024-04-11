@@ -6,7 +6,7 @@ public class Wagon {
     private int spacesPerDay;
     private String rations;
     private int livingMembers;
-    private ArrayList<WagonMember> listOfMembers;
+    private ArrayList<WagonMember> listOfMembers = new ArrayList<>();
     private double moneyLeft;
     private boolean wagonFunctional;
     private int points;
@@ -106,6 +106,10 @@ public class Wagon {
 
     public void updateMoney(double amount){
         this.moneyLeft -= amount;
+    }
+
+    public double getMoney(){
+        return this.moneyLeft;
     }
 
     public void huntForFood(Bullets bullets, Food food){
