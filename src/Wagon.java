@@ -63,6 +63,10 @@ public class Wagon {
         }
     }
 
+    public int getSpacesPerDay(){
+        return this.spacesPerDay;
+    }
+
     public void move(int spaces, Trail trail){
         trail.spaces += spaces;
     }
