@@ -26,39 +26,39 @@ public class Wagon {
         this.moneyLeft = money;
     }
 
-    public void setPace(String pace, ArrayList<WagonMember> listOFMembers){
+    public void setPace(String pace){
         this.pace = pace;
         if(pace == "Steady"){
             this.spacesPerDay = 2;
-            for(int i = 0; i < listOFMembers.size(); i++){
-                listOFMembers.get(i).health += 2;
+            for(int i = 0; i < this.listOfMembers.size(); i++){
+                this.listOfMembers.get(i).health += 2;
             }
         } else if (pace == "Strenuous"){
             this.spacesPerDay = 3;
-            for(int i = 0; i < listOFMembers.size(); i++){
-                listOFMembers.get(i).health -= 1;
+            for(int i = 0; i < this.listOfMembers.size(); i++){
+                this.listOfMembers.get(i).health -= 1;
             }
         } else if (pace == "Grueling"){
             this.spacesPerDay = 4;
-            for(int i = 0; i < listOFMembers.size(); i++){
-                listOFMembers.get(i).health -= 4;
+            for(int i = 0; i < this.listOfMembers.size(); i++){
+                this.listOfMembers.get(i).health -= 4;
             }
         }
     }
 
-    public void setRations(String rations, Food food, ArrayList<WagonMember> listOFMembers){
+    public void setRations(String rations, Food food){
         this.rations = rations;
         if(rations == "Generous"){
             food.setCount(food.getCount()-3*livingMembers);
-            for(int i = 0; i < listOFMembers.size(); i++){
-                listOFMembers.get(i).health += 2;
+            for(int i = 0; i < this.listOfMembers.size(); i++){
+                this.listOfMembers.get(i).health += 2;
             }
         } else if (rations == "Meager"){
             food.setCount(food.getCount()-2*livingMembers);
         } else if (rations == "Bare bones"){
             food.setCount(food.getCount()-livingMembers);
-            for(int i = 0; i < listOFMembers.size(); i++){
-                listOFMembers.get(i).health -= 3;
+            for(int i = 0; i < this.listOfMembers.size(); i++){
+                this.listOfMembers.get(i).health -= 3;
             }
         }
     }
