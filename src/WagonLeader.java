@@ -3,4 +3,6 @@ public class WagonLeader {
     //double points for caprenter
     //triple points for farmer
    
+    String startOccupation;
+    boolean doomed;
 }
