@@ -5,10 +5,10 @@ import static org.junit.Assert.assertEquals;
 public class AppTest {
 
     @Test
-    public void test(){
+    public void testItemCount(){
         Oxen oxen = new Oxen();
         oxen.setCount(5);
-        assertEquals(oxen.getCount(), 5);
+        assertEquals(5, oxen.getCount());
     }
 
     WagonMember member1 = new WagonMember();
@@ -23,14 +23,27 @@ public class AppTest {
     public void buyBullets(){
         Bullets bullets = new Bullets();
         store.sell("bullets", 10, wagon, bullets);
-        assertEquals(bullets.getCount(), 200);
+        assertEquals(200, bullets.getCount());
     }
 
     @Test
     public void checkMoneyAfterSelling(){
         ClothingSet clothes  = new ClothingSet();
         store.sell("clothes", 6, wagon, clothes);
-        assertEquals(wagon.getMoney(), 1540, 0.001);
+        assertEquals(1540, wagon.getMoney(), 0.001);
+    }
+
+    @Test
+    public void settingPace(){
+        wagon.setPace("Strenuous");
+        assertEquals(3, wagon.getSpacesPerDay());
+    }
+
+    @Test
+    public void settingRations(){
+        food.setCount(50);
+        wagon.setRations("Bare bones", food);
+        assertEquals(45, food.getCount());
     }
 
     Food food = new Food();
@@ -55,7 +68,7 @@ public class AppTest {
         newList.add(axle);
         newList.add(wheel);
         newList.add(food2);
-        assertEquals(inventory.getList(), newList);
+        assertEquals(newList, inventory.getList());
     }
 
     @Test
@@ -68,6 +81,26 @@ public class AppTest {
         newList.add(bullets);
         newList.add(axle);
         newList.add(wheel);
-        assertEquals(inventory.getList(), newList);
+        assertEquals(newList, inventory.getList());
     }
+
+    @Test
+    public void testHuntingBullets(){
+        bullets.setCount(100);
+        wagon.huntForFood(bullets, food);
+        wagon.huntForFood(bullets, food);
+        wagon.huntForFood(bullets, food);
+        wagon.huntForFood(bullets, food);
+        wagon.huntForFood(bullets, food);
+        assertEquals(95, bullets.getCount());
+    }
+
+    @Test
+    public void testClothingUnwearable(){
+        clothes.setCount(10);
+        clothes.setIsWearable(false);
+        clothes.affectMember(member1);
+        assertEquals(9, clothes.getCount());
+    }
+
 }
