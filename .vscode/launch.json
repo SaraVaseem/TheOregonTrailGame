@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Wagon",
+            "request": "launch",
+            "mainClass": "Wagon",
+            "projectName": "TheOregonTrailGame_c9207cf4"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "TheOregonTrailGame_c9207cf4"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
