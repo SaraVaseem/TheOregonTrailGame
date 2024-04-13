@@ -137,6 +137,8 @@ public class Wagon {
                 System.out.println("You shot a bear. +100 lbs of food.");
                 food.setCount(food.getCount()+100);
             }
+        } else {
+            System.out.println("Hunt was not successful. You did not shoot anything.");
         }
         bullets.shoot();
     }
@@ -145,3 +147,5 @@ public class Wagon {
         return points * pointMultiplier;
     }
 }
+
+
