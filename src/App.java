@@ -2,7 +2,10 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("-------\r\n" +
+        int choice = 0;
+        Scanner myObj = new Scanner(System.in);
+        while(choice != 1){
+            System.out.println("-------\r\n" +
             "\r\n" + //
             "\r\n" + //
             "------------------------------------------\r\n" + //
@@ -15,42 +18,46 @@ public class App {
             "    4. Turn sound off \r\n" + //
             "\r\n" + //
             "What is your choice ?");
-        Scanner myObj = new Scanner(System.in);
-        int choice = myObj.nextInt();
-
-        //add choice functionality
-        if (choice == 1) {
+            choice = myObj.nextInt();
+            //add choice functionality
+            if (choice == 1) {
+                break;
             //travel the trail
-        } else if (choice == 2) {
-            System.out.println("What was it like to cross 2,000 miles of plains, rivers, and mountains in 1848?\r\n" + //
-                "The Oregon Trail\" allows you relive one of the greatest adventures in\r\n" + //
-                "American history:  the journey taken by thousands of emigrants on the\r\n" + //
-                "Oregon Trail.  It was a long, difficult journey--one that often resulted in\r\n" + //
-                "failure and death.  But for those who succeeded, it led to a new and better\r\n" + //
-                "life in the rich, fertile Willamette Valley of Oregon.  \r\n" + //
-                "\r\n" + //
-                "How will you make life-and-death decisions?  How will you cross the rivers?\r\n" + //
-                "How much and what kind of supplies should you take along?  If you run low on\r\n" + //
-                "provisions, will you be able to hunt or trade to get the food you need?  Will\r\n" + //
-                "you overcome the dangers of disease and severe weather?\r\n" + //
-                "\r\n" + //
-                "\"The Oregon Trail\" poses these and other exciting challenges.\r\n" + //
-                "\r\n" + //
-                "If for some reason you don't survive--your wagon burns, thieves steal your \r\n" + //
-                "oxen, you run out of provisions, or you die of cholera--don't give up!  Unlike\r\n" + //
-                "the real-life pioneers of 1848, you can try again and again until you succeed \r\n" + //
-                "and your name is added to \"The Oregon Trail List of Legends.\"\r\n" + //
-                "\r\n" + //
-                "The object of \"The Oregon Trail\" is for you to make it all the way from\r\n" + //
-                "Independence, Missouri, to Oregon's Willamette Valley.  Along the way, you'll\r\n" + //
-                "have many decisions to make.");
-        } else if (choice == 3) {
-            //see the Oregon Top Ten (extra)
-        } else if (choice == 4) {
-            //turn sound off (extra)
+            } else if (choice == 2) {
+                System.out.println("What was it like to cross 2,000 miles of plains, rivers, and mountains in 1848?\r\n" + //
+                    "The Oregon Trail\" allows you relive one of the greatest adventures in\r\n" + //
+                    "American history:  the journey taken by thousands of emigrants on the\r\n" + //
+                    "Oregon Trail.  It was a long, difficult journey--one that often resulted in\r\n" + //
+                    "failure and death.  But for those who succeeded, it led to a new and better\r\n" + //
+                    "life in the rich, fertile Willamette Valley of Oregon.  \r\n" + //
+                    "\r\n" + //
+                    "How will you make life-and-death decisions?  How will you cross the rivers?\r\n" + //
+                    "How much and what kind of supplies should you take along?  If you run low on\r\n" + //
+                    "provisions, will you be able to hunt or trade to get the food you need?  Will\r\n" + //
+                    "you overcome the dangers of disease and severe weather?\r\n" + //
+                    "\r\n" + //
+                    "\"The Oregon Trail\" poses these and other exciting challenges.\r\n" + //
+                    "\r\n" + //
+                    "If for some reason you don't survive--your wagon burns, thieves steal your \r\n" + //
+                    "oxen, you run out of provisions, or you die of cholera--don't give up!  Unlike\r\n" + //
+                    "the real-life pioneers of 1848, you can try again and again until you succeed \r\n" + //
+                    "and your name is added to \"The Oregon Trail List of Legends.\"\r\n" + //
+                    "\r\n" + //
+                    "The object of \"The Oregon Trail\" is for you to make it all the way from\r\n" + //
+                    "Independence, Missouri, to Oregon's Willamette Valley.  Along the way, you'll\r\n" + //
+                    "have many decisions to make.");
+            } else if (choice == 3) {
+                System.out.println("See Top Ten");
+                //see the Oregon Top Ten (extra)
+            } else if (choice == 4) {
+                System.out.println("Turn off sound.");
+                //turn sound off (extra)
+            }
         }
-
-        System.out.println("------------------------------------------\r\n" + //
+            
+        int role = 4;
+        while(role == 4){
+            System.out.println("------------------------------------------\r\n" + //
             "\r\n" + //
             "\r\n" + //
             "------------------------------------------\r\n" + //
@@ -62,61 +69,83 @@ public class App {
             "        3. Be a farmer from Illinois\r\n" + //
             "        4. Find out the differences between these choices\r\n" + //
             "\r\n" + //
-            "        what is your choice ?");
-        int role = myObj.nextInt();
+            "        What is your choice ?");
+            role = myObj.nextInt();
 
-        //add role functionality
-        if (role == 1) {
-            //+1600 money left & normal points
-        } else if (role == 2) {
-            //+800 money left & twice as many points
-        } else if (role == 3) {
-            //+ 400 money left & thrice as many points
-        } else if (role == 4) {
-            System.out.println("------------------------------------------\r\n" + //
-                "            Traveling to Oregon isn't easy! But if you're a banker, you'll have more money for supplies\r\n" + //
-                "            and services than a carpenter or a farmer.\r\n" + //
-                "\r\n" + //
-                "            However, the harder you have to try, the more points you deserve!\r\n" + //
-                "            Therefore, the farmer earns the greatest number of points and the banker earns the least.\r\n" + //
-                "\r\n" + //
-                "            Press SPACE BAR to continue \r\n" + //
-                "\r\n" + //
-                "------------------------------------------");
-            //go back to choices
+            int money;
+            int multiplier;
+            String occupation;
+            //add role functionality
+            if (role == 1) {
+                //+1600 money left & normal points
+                occupation = "banker";
+                money = 1600;
+                multiplier = 1;
+                break;
+            } else if (role == 2) {
+                //+800 money left & twice as many points
+                occupation = "carpenter";
+                money = 800;
+                multiplier = 2;
+                break;
+            } else if (role == 3) {
+                //+ 400 money left & thrice as many points
+                occupation = "farmer";
+                money = 400;
+                multiplier = 3;
+                break;
+            } else if (role == 4) {
+                System.out.println("------------------------------------------\r\n" + //
+                    "            Traveling to Oregon isn't easy! But if you're a banker, you'll have more money for supplies\r\n" + //
+                    "            and services than a carpenter or a farmer.\r\n" + //
+                    "\r\n" + //
+                    "            However, the harder you have to try, the more points you deserve!\r\n" + //
+                    "            Therefore, the farmer earns the greatest number of points and the banker earns the least.\r\n" + //
+                    "\r\n" + //
+                    "------------------------------------------");
+                //go back to choices
+            }
         }
-
-
-        System.out.println("------------------------------------------\r\n" + //
+        
+        boolean isNotCorrect = true;
+        while(isNotCorrect){
+            System.out.println("------------------------------------------\r\n" + //
             "\r\n" + //
             "------------------------------------------\r\n" + //
             "        What is the first name of the wagon leader?");
-        String wagon_leader_name = myObj.nextLine();
+            String wagon_leader_name = myObj.nextLine();
 
-        System.out.println("        What are the first names of the four other members of your party ?\r\n" + //
-            "1. ");
-        String member_1 = myObj.nextLine();
+            System.out.println("        What are the first names of the four other members of your party ?\r\n" + //
+                "1. ");
+            String member_1 = myObj.nextLine();
 
-        System.out.println("2. ");
-        String member_2 = myObj.nextLine();
+            System.out.println("2. ");
+            String member_2 = myObj.nextLine();
 
-        System.out.println("3. ");
-        String member_3 = myObj.nextLine();
+            System.out.println("3. ");
+            String member_3 = myObj.nextLine();
 
-        System.out.println("4. ");
-        String member_4 = myObj.nextLine();
+            System.out.println("4. ");
+            String member_4 = myObj.nextLine();
 
-        //add verification
-        System.out.println("Are these names correct ? ");
-        String verify = myObj.nextLine();
+            //add verification
+            System.out.println("Are these names correct ? ");
+            String verify = myObj.nextLine();
 
-        if (verify == "yes") {
-            //continue
-        } else {
-            //go back to user name prompt 
+            if(verify.equals("yes") || verify.equals("y")) {
+                isNotCorrect = false;
+                // WagonLeader wagonLeader = new WagonLeader(wagon_leader_name, occupation);
+                // WagonMember member1 = new WagonMember(member_1);
+                // WagonMember member2 = new WagonMember(member_2);
+                // WagonMember member3 = new WagonMember(member_3);
+                // WagonMember member4 = new WagonMember(member_4);
+                // Wagon wagon = new Wagon(wagonLeader, member1, member2, member3, member4, multiplier, money);
+            } 
         }
-
-        System.out.println("------------------------------------------\r\n" +
+        
+        int month = 6;
+        while(month == 6){
+            System.out.println("------------------------------------------\r\n" +
             "\r\n" + //
             "\r\n" + //
             "------------------------------------------\r\n" + //
@@ -133,31 +162,32 @@ public class App {
             "            6. Ask for advice\r\n" + //
             "\r\n" + //
             "        What is your choice ?");
-        int month = myObj.nextInt();
+            month = myObj.nextInt();
 
-        //add month functionality
-        if (month == 1) {
-            //update weather
-        } else if (month == 2) {
-            //update weather
-        } else if (month == 3) {
-            //update weather
-        } else if (month == 4) {
-            //update weather
-        } else if (month == 5) {
-            //update weather
-        } else if (month == 6) {
-            System.out.println("\n\n\n" +
-                "------------------------------------------\n" +
-                "You attend a public meeting held for 'folks with the California Oregon fever'\n" +
-                "You're told:\n\n" +
-                "If you leave too early, there won't be any grass for your oxen to eat.\n" +
-                "If you leave too late, you may not get to Oregon before winter comes.\n" +
-                "If you leave at just the right time, there will be green grass and \n" +
-                "the weather will still be cool.\n\n" +
-                "Press SPACE BAR to continue\n" +
-                "------------------------------------------");
-            //go back to month options
+            //add month functionality
+            if (month == 1) {
+                //update weather
+            } else if (month == 2) {
+                //update weather
+            } else if (month == 3) {
+                //update weather
+            } else if (month == 4) {
+                //update weather
+            } else if (month == 5) {
+                //update weather
+            } else if (month == 6) {
+                System.out.println("\n\n\n" +
+                    "------------------------------------------\n" +
+                    "You attend a public meeting held for 'folks with the California Oregon fever'\n" +
+                    "You're told:\n\n" +
+                    "If you leave too early, there won't be any grass for your oxen to eat.\n" +
+                    "If you leave too late, you may not get to Oregon before winter comes.\n" +
+                    "If you leave at just the right time, there will be green grass and \n" +
+                    "the weather will still be cool.\n\n" +
+                    "Press SPACE BAR to continue\n" +
+                    "------------------------------------------");
+                //go back to month options
+            }
         }
 
         //add bill + inventory info        
@@ -187,7 +217,10 @@ public class App {
             "Press SPACE BAR to continue\r\n" +
             "------------------------------------------");
 
-        System.out.println("\r\n" +
+        MattsGeneralStore store = new MattsGeneralStore();
+        int store_choice = 0;
+        while(store_choice != 6){
+            System.out.println("\r\n" +
             "\r\n------------------------------------------\r\n" +
             "        Matt's General Store\r\n" +
             "        Independence, Missouri\r\n" +
@@ -206,150 +239,168 @@ public class App {
             "Amount you have: $" /* + money variable */ + "\r\n" +
             "\r\n" +
             "Which item would you like to buy ?");
-        int store_choice = myObj.nextInt();
+            store_choice = myObj.nextInt();
 
-        //add Matt's store functionality
-        if (store_choice == 1) {
-            System.out.println("\r\n" + //
-                "\r\n" + //
-                "------------------------------------------\r\n" + //
-                "        Matt's General Store\r\n" + //
-                "        Independence, Missouri\r\n" + //
-                "                 April 1, 1848\r\n" + //
-                "\r\n" + //
-                "There are 2 oxen in a yoke; I recommend at least 3 yoke.\r\n" + //
-                "I charge $40 a yoke.\r\n" + //
-                "\r\n" + //
-                "How many yoke do you want ?");
-            int num_of_yokes = myObj.nextInt();
-            //calculate price
-            System.out.println("\r\n" +
-                "            Bill so far: " /* +  bill */ );
-            //go back to main store
+            //add Matt's store functionality
 
-        } else if (store_choice == 2) {
-            System.out.println("\r\n" +
-                "\r\n" +
-                "\r\n" +
-                "\r\n" +
-                "------------------------------------------\r\n" +
-                "        Matt's General Store\r\n" +
-                "        Independence, Missouri\r\n" +
-                "                 April 1, 1848\r\n" +
-                "\r\n" +
-                "I recommend you take at least 200 pounds of food for each person in your family.;\r\n" +
-                "I see that you have 5 people in all. You'll need flour, sugar, bacon, and coffee.\r\n" +
-                "My price is 20 cents per pound.\r\n" +
-                "\r\n" +
-                "How many pounds of food do you want ?");
-            int pounds_of_food = myObj.nextInt();
-            //calculate price
-            System.out.println("\r\n" +
-                "            Bill so far: " /* + bill */ );
-            //go back to main store
+            if (store_choice == 1) {
+                System.out.println("\r\n" + //
+                    "\r\n" + //
+                    "------------------------------------------\r\n" + //
+                    "        Matt's General Store\r\n" + //
+                    "        Independence, Missouri\r\n" + //
+                    "                 April 1, 1848\r\n" + //
+                    "\r\n" + //
+                    "There are 2 oxen in a yoke; I recommend at least 3 yoke.\r\n" + //
+                    "I charge $40 a yoke.\r\n" + //
+                    "\r\n" + //
+                    "How many yoke do you want ?");
+                int num_of_yokes = myObj.nextInt();
 
-        } else if (store_choice == 3) {
-            System.out.println("\r\n" + //
-                "\r\n" + //
-                "\r\n" + //
-                "\r\n" + //
-                "------------------------------------------\r\n" + //
-                "        Matt's General Store\r\n" + //
-                "        Independence, Missouri\r\n" + //
-                "                 April 1, 1848\r\n" + //
-                "\r\n" + //
-                "you'll need warm clothing in the mountains. \r\n" + //
-                "I recommend taking at least 2 sets of clothes per person.\r\n" + //
-                "Each set is $10.00.\r\n" + //
-                "\r\n" + //
-                "How many sets of clothes do you want ?");
-            int sets_of_clothing = myObj.nextInt();
-            //calculate price
-            System.out.println("\r\n" +
-                "            Bill so far: " /* + bill */ );
-            //go back to main store
+                //calculate price
+                Oxen oxen = new Oxen();
+                //store.sell("oxen", num_of_yokes, wagon, oxen);
+                System.out.println("\r\n" +
+                    "            Bill so far: "+ store.getTotalCost() );
+                //go back to main store
 
-        } else if (store_choice == 4) {
-            System.out.println("\r\n" +
-                "\r\n" +
-                "\r\n" +
-                "\r\n" +
-                "------------------------------------------\r\n" +
-                "        Matt's General Store\r\n" +
-                "        Independence, Missouri\r\n" +
-                "                 April 1, 1848\r\n" +
-                "\r\n" +
-                "I sell ammunition in boxes of 20 bullets.\r\n" +
-                "Each box costs $2.00.\r\n" +
-                "\r\n" +
-                "How many boxes do you want?");
-            int boxes_of_ammo = myObj.nextInt();
-            //calculate price
-            System.out.println("\r\n" +
-                "            Bill so far: " /* + bill */ );
-            //go back to main store
+            } else if (store_choice == 2) {
+                System.out.println("\r\n" +
+                    "\r\n" +
+                    "\r\n" +
+                    "\r\n" +
+                    "------------------------------------------\r\n" +
+                    "        Matt's General Store\r\n" +
+                    "        Independence, Missouri\r\n" +
+                    "                 April 1, 1848\r\n" +
+                    "\r\n" +
+                    "I recommend you take at least 200 pounds of food for each person in your family.;\r\n" +
+                    "I see that you have 5 people in all. You'll need flour, sugar, bacon, and coffee.\r\n" +
+                    "My price is 20 cents per pound.\r\n" +
+                    "\r\n" +
+                    "How many pounds of food do you want ?");
+                int pounds_of_food = myObj.nextInt();
+                //calculate price
+                Food food = new Food();
+                //store.sell("food", pounds_of_food, wagon, food);
+                System.out.println("\r\n" +
+                    "            Bill so far: " +store.getTotalCost());
+                //go back to main store
 
-        } else if (store_choice == 5) {
-            System.out.println("------------------------------------------\r\n" +
-                "\r\n" +
-                "\r\n" +
-                "\r\n" +
-                "------------------------------------------\r\n" +
-                "        Matt's General Store\r\n" +
-                "        Independence, Missouri\r\n" +
-                "\r\n" +
-                "It's a good idea to have a few spare parts for your wagon.\r\n" +
-                "Here are the prices:\r\n" +
-                "\r\n" +
-                "    wagon wheel -   $10 each\r\n" +
-                "    wagon axle -    $10 each \r\n" +
-                "    wagon tongue -  $10 each\r\n" +
-                "\r\n" +
-                "How many wagon wheels ?");
-            int wheels = myObj.nextInt();
+            } else if (store_choice == 3) {
+                System.out.println("\r\n" + //
+                    "\r\n" + //
+                    "\r\n" + //
+                    "\r\n" + //
+                    "------------------------------------------\r\n" + //
+                    "        Matt's General Store\r\n" + //
+                    "        Independence, Missouri\r\n" + //
+                    "                 April 1, 1848\r\n" + //
+                    "\r\n" + //
+                    "you'll need warm clothing in the mountains. \r\n" + //
+                    "I recommend taking at least 2 sets of clothes per person.\r\n" + //
+                    "Each set is $10.00.\r\n" + //
+                    "\r\n" + //
+                    "How many sets of clothes do you want ?");
+                int sets_of_clothing = myObj.nextInt();
+                //calculate price
+                ClothingSet clothes = new ClothingSet();
+                //store.sell("clothes", sets_of_clothing, wagon, clothes);
+                System.out.println("\r\n" +
+                    "            Bill so far: "+store.getTotalCost());
+                //go back to main store
 
-            if (wheels > 3) {
-                System.out.println("-> You wagon many only carry 3 wagon wheels.\r\n" +
+            } else if (store_choice == 4) {
+                System.out.println("\r\n" +
+                    "\r\n" +
+                    "\r\n" +
+                    "\r\n" +
+                    "------------------------------------------\r\n" +
+                    "        Matt's General Store\r\n" +
+                    "        Independence, Missouri\r\n" +
+                    "                 April 1, 1848\r\n" +
+                    "\r\n" +
+                    "I sell ammunition in boxes of 20 bullets.\r\n" +
+                    "Each box costs $2.00.\r\n" +
+                    "\r\n" +
+                    "How many boxes do you want?");
+                int boxes_of_ammo = myObj.nextInt();
+                //calculate price
+                Bullets bullets = new Bullets();
+                //store.sell("bullets", boxes_of_ammo, wagon, bullets);
+                System.out.println("\r\n" +
+                    "            Bill so far: "+store.getTotalCost());
+                //go back to main store
+
+            } else if (store_choice == 5) {
+                System.out.println("------------------------------------------\r\n" +
+                    "\r\n" +
+                    "\r\n" +
+                    "\r\n" +
+                    "------------------------------------------\r\n" +
+                    "        Matt's General Store\r\n" +
+                    "        Independence, Missouri\r\n" +
+                    "\r\n" +
+                    "It's a good idea to have a few spare parts for your wagon.\r\n" +
+                    "Here are the prices:\r\n" +
+                    "\r\n" +
+                    "    wagon wheel -   $10 each\r\n" +
+                    "    wagon axle -    $10 each \r\n" +
+                    "    wagon tongue -  $10 each\r\n" +
+                    "\r\n" +
                     "How many wagon wheels ?");
-                wheels = myObj.nextInt();
-            }
+                int wheels = myObj.nextInt();
 
-            System.out.println("How many wagon axles ?");
-            int axles = myObj.nextInt();
-            if (axles > 3) {
-                System.out.println("-> You wagon many only carry 3 wagon axles.\r\n" +
-                    "How many wagon axles ?");
-                axles = myObj.nextInt();
-            }
+                if (wheels > 3) {
+                    System.out.println("-> You wagon many only carry 3 wagon wheels.\r\n" +
+                        "How many wagon wheels ?");
+                    wheels = myObj.nextInt();
+                }
 
-            System.out.println("How many wagon tongues ?");
-            int tongues = myObj.nextInt();
-            if (tongues > 3) {
-                System.out.println("-> You wagon many only carry 3 wagon tongues.\r\n" +
-                    "How many wagon tongues ?");
-                tongues = myObj.nextInt();
-            }
+                System.out.println("How many wagon axles ?");
+                int axles = myObj.nextInt();
+                if (axles > 3) {
+                    System.out.println("-> You wagon many only carry 3 wagon axles.\r\n" +
+                        "How many wagon axles ?");
+                    axles = myObj.nextInt();
+                }
 
-            //calculate price
-            System.out.println("\r\n" +
-                "            Bill so far: " /* + bill */ );
-            //go back to main store
-        } else if (store_choice == 6) {
-            //add items to invemtory & subtract from money left
-            System.out.println("------------------------------------------\r\n" +
-                "\r\n" +
-                "\r\n" +
-                "\r\n" +
-                "\r\n" +
-                "\r\n" +
-                "\r\n" +
-                "------------------------------------------\r\n" +
-                "Well then, you're ready to start.\r\n" +
-                "Good luck ! You have a long and difficult jounrey ahead of you.\r\n" +
-                "\r\n" +
-                "Press SPACE BAR to continue\r\n" +
-                "------------------------------------------");
+                System.out.println("How many wagon tongues ?");
+                int tongues = myObj.nextInt();
+                if (tongues > 3) {
+                    System.out.println("-> You wagon many only carry 3 wagon tongues.\r\n" +
+                        "How many wagon tongues ?");
+                    tongues = myObj.nextInt();
+                }
+
+                //calculate price
+                // Wheel wheel = new Wheel();
+                // store.sell("wheel", wheels, wagon, wheel);
+                // Axle axle = new Axle();
+                // store.sell("axle", axles, wagon, axle);
+                // Tongue tongue = new Tongue();
+                // store.sell("tongue", tongues, wagon, tongue);
+                // System.out.println("\r\n" +
+                //     "            Bill so far: "+store.getTotalCost());
+                //go back to main store
+            } else if (store_choice == 6) {
+                //add items to invemtory & subtract from money left
+                System.out.println("------------------------------------------\r\n" +
+                    "\r\n" +
+                    "\r\n" +
+                    "\r\n" +
+                    "\r\n" +
+                    "\r\n" +
+                    "\r\n" +
+                    "------------------------------------------\r\n" +
+                    "Well then, you're ready to start.\r\n" +
+                    "Good luck ! You have a long and difficult journey ahead of you.\r\n" +
+                    "\r\n" +
+                    "Press SPACE BAR to continue\r\n" +
+                    "------------------------------------------");
+            }
         }
+
 
         System.out.println("\r\n" +
             "\r\n------------------------------------------\r\n" +
@@ -364,9 +415,13 @@ public class App {
             "Press SPACE BAR to continue\r\n" +
             "------------------------------------------\r\n" +
             "\r\n\r\n" +
-            "------------------------------------------\r\n" +
-            /*weather + */
-            /*date + */ "\r\n" +
+            "------------------------------------------\r\n");
+
+        int menu_option = 0;
+        /*weather + */
+        /*date + */ 
+        while(menu_option!=1){
+            System.out.println("\r\n" +
             "\r\n" +
             "Weather: " /* + weather*/ + " \r\n" +
             "Health: " /* + health*/ + " \r\n" +
@@ -387,211 +442,214 @@ public class App {
             "\r\n" +
             "What is your choice ?");
 
-        int menu_option = myObj.nextInt();
+            menu_option = myObj.nextInt();
 
-        //add menu functionality
-        if (menu_option == 1) {
-            if (false /*location == "Independence"*/ ) {
+            //add menu functionality
+            if (menu_option == 1) {
+                if (false /*location == "Independence"*/ ) {
+                    System.out.println("------------------------------------------\r\n" + //
+                        "\r\n" + //
+                        "\r\n" + //
+                        "------------------------------------------\r\n" + //
+                        "From Independence it is 102 miles to Kansas River crossing\r\n" + //
+                        "\r\n" + //
+                        "Date: " /* + date */ + "\r\n" + //
+                        "Weather: " /* + weather */ + "\r\n" + //
+                        "Health: " /* + health */ + "\r\n" + //
+                        "Food: " /* + food */ + "\r\n" + //
+                        "Next landmark: " /* + landmark */ + "\r\n" + //
+                        "Miles traveled: " /* + miles */ + "\r\n" + //
+                        "\r\n" + //
+                        "Press SPACE BAR to continue\r\n" + //
+                        "------------------------------------------");
+
+                    //update date, weather, health, food, next landmark, miles traveled
+
+                    System.out.println("\r\n" + //
+                        "\r\n" + //
+                        "------------------------------------------\r\n" + //
+                        "\r\n" + //
+                        "Date: " /* + date */ + "\r\n" + //
+                        "Weather: " /* + weather */ + "\r\n" + //
+                        "Health: " /* + health */ + "\r\n" + //
+                        "Food: " /* + food */ + "\r\n" + //
+                        "Next landmark: " /* + landmark */ + "\r\n" + //
+                        "Miles traveled: " /* + miles */ + "\r\n" + //
+                        "------------------------------------------\r\n" + //
+                        "\r\n" + //
+                        "\r\n" + //
+                        "");
+                } else if (true /*location == "Kansas River Crossing"*/ ) {
+                    System.out.println("\n" +
+                        "\n" +
+                        "------------------------------------------\n" +
+                        "\n" +
+                        "\n" +
+                        /* name +*/ "has cholera\n" +
+                        "\n" +
+                        "Date: April 2, 1848                 April 2 --> 4\n" +
+                        "Weather: cool                       cool --> warm\n" +
+                        "Health: good\n" +
+                        "Food: 1985 pounds                   1985 --> 1955\n" +
+                        "Next landmark: 22 miles             82 --> 52 --> 22\n" +
+                        "Miles traveled: 80 miles            50 --> 80\n" +
+                        "\n" +
+                        "Press SPACE BAR to continue\n" +
+                        "------------------------------------------");
+                    System.out.println("\n" +
+                        "\n" +
+                        "------------------------------------------\n" +
+                        "You are now at the Kansas River crossing.\n" +
+                        "Would you like to look around ? Y\n" +
+                        "\n" +
+                        "Date: April 5, 1848\n" +
+                        "Weather: warm\n" +
+                        "Health: good\n" +
+                        "Food: 1940 pounds\n" +
+                        "Next landmark: 0 miles\n" +
+                        "Miles traveled: 102 miles\n" +
+                        "\n" +
+                        "------------------------------------------\n" +
+                        "\n" +
+                        "\n" +
+                        "------------------------------------------\n" +
+                        "shows river stream\n" +
+                        "\n" +
+                        "Kasas River crossing\n" +
+                        "April 5, 1848\n" +
+                        "\n" +
+                        "Press SPACE BAR to continue\n" +
+                        "------------------------------------------\n" +
+                        "\n" +
+                        "");
+                } else if (true /*location == "Big Blue River crossing"*/ ) {
+
+                } else if (true /*location == "Fort Kearney"*/ ) {
+
+                } else if (true /*location == "Chimney Rock"*/ ) {
+
+                } else if (true /*location == "Fort Laramie"*/ ) {
+
+                } else if (true /*location == "Independence Rock"*/ ) {
+
+                } else if (true /*location == "South Pass"*/ ) {
+
+                } else if (true /*location == "Green River crossing"*/ ) {
+
+                } else if (true /*location == "Soda Springs"*/ ) {
+
+                } else if (true /*location == "Fort Hall"*/ ) {
+
+                } else if (true /*location == "Snake River crossing"*/ ) {
+
+                } else if (true /*location == "Fort Boise"*/ ) {
+
+                } else if (true /*location == "Blue mountains"*/ ) {
+                    //trail divides here between Fort Walla Walla & The Dalles
+                } else if (true /*location == "Fort Walla Walla"*/ ) {
+
+                } else if (true /*location == "The Dalles"*/ ) {
+                    //trail divides here between the Columbia River & the Barlow Toll Road
+                } else if (true /*location == "Columbia River"*/ ) {
+
+                } else if (true /*location == "Barlow Toll road"*/ ) {
+                    
+                } else if (true /*location == "Willamette Valley"*/ ) {
+                    //you win game
+                }
+
+                //go back to menu
+            } else if (menu_option == 2) {
                 System.out.println("------------------------------------------\r\n" + //
                     "\r\n" + //
                     "\r\n" + //
                     "------------------------------------------\r\n" + //
-                    "From Independence it is 102 miles to Kansas River crossing\r\n" + //
+                    "        Your Supplies \r\n" + //
                     "\r\n" + //
-                    "Date: " /* + date */ + "\r\n" + //
-                    "Weather: " /* + weather */ + "\r\n" + //
-                    "Health: " /* + health */ + "\r\n" + //
-                    "Food: " /* + food */ + "\r\n" + //
-                    "Next landmark: " /* + landmark */ + "\r\n" + //
-                    "Miles traveled: " /* + miles */ + "\r\n" + //
+                    "oxen                " /*+ oxen */ + "\r\n" + //
+                    "sets of clothes     " /*+ set of clothes */ + "\r\n" + //
+                    "bullets             " /*+ bullets */ + "\r\n" + //
+                    "wagon wheels        " /*+ wagon wheels */ + "\r\n" + //
+                    "wagon axles         " /*+ wagon axles */ + "\r\n" + //
+                    "wagon tongues       " /*+ wagon tongues */ + "\r\n" + //
+                    "pounds of food      " /*+ pounds of food */ + "\r\n" + //
+                    "money left          " /*+ money left */ + "\r\n" + //
                     "\r\n" + //
                     "Press SPACE BAR to continue\r\n" + //
-                    "------------------------------------------");
-
-                //update date, weather, health, food, next landmark, miles traveled
-
+                    "------------------------------------------\r\n\r\n\r\n");
+            } else if (menu_option == 3) {
+                //show map (extra)
+            } else if (menu_option == 4) {
                 System.out.println("\r\n" + //
                     "\r\n" + //
                     "------------------------------------------\r\n" + //
+                    "Change pace (currently \"steady\")\r\n" + //
                     "\r\n" + //
-                    "Date: " /* + date */ + "\r\n" + //
-                    "Weather: " /* + weather */ + "\r\n" + //
-                    "Health: " /* + health */ + "\r\n" + //
-                    "Food: " /* + food */ + "\r\n" + //
-                    "Next landmark: " /* + landmark */ + "\r\n" + //
-                    "Miles traveled: " /* + miles */ + "\r\n" + //
-                    "------------------------------------------\r\n" + //
+                    "The pace at which you travel can change. Your choices are: \r\n" + //
                     "\r\n" + //
+                    "    1. a steady pace \r\n" + //
+                    "    2. a strenuous pace \r\n" + //
+                    "    3. a grueling pace \r\n" + //
+                    "    4. find out what these different paces mean \r\n" + //
                     "\r\n" + //
-                    "");
-            } else if (true /*location == "Kansas River Crossing"*/ ) {
-                System.out.println("\n" +
-                    "\n" +
-                    "------------------------------------------\n" +
-                    "\n" +
-                    "\n" +
-                    /* name +*/ "has cholera\n" +
-                    "\n" +
-                    "Date: April 2, 1848                 April 2 --> 4\n" +
-                    "Weather: cool                       cool --> warm\n" +
-                    "Health: good\n" +
-                    "Food: 1985 pounds                   1985 --> 1955\n" +
-                    "Next landmark: 22 miles             82 --> 52 --> 22\n" +
-                    "Miles traveled: 80 miles            50 --> 80\n" +
-                    "\n" +
-                    "Press SPACE BAR to continue\n" +
-                    "------------------------------------------");
-                System.out.println("\n" +
-                    "\n" +
-                    "------------------------------------------\n" +
-                    "You are now at the Kansas River crossing.\n" +
-                    "Would you like to look around ? Y\n" +
-                    "\n" +
-                    "Date: April 5, 1848\n" +
-                    "Weather: warm\n" +
-                    "Health: good\n" +
-                    "Food: 1940 pounds\n" +
-                    "Next landmark: 0 miles\n" +
-                    "Miles traveled: 102 miles\n" +
-                    "\n" +
-                    "------------------------------------------\n" +
-                    "\n" +
-                    "\n" +
-                    "------------------------------------------\n" +
-                    "shows river stream\n" +
-                    "\n" +
-                    "Kasas River crossing\n" +
-                    "April 5, 1848\n" +
-                    "\n" +
-                    "Press SPACE BAR to continue\n" +
-                    "------------------------------------------\n" +
-                    "\n" +
-                    "");
-            } else if (true /*location == "Big Blue River crossing"*/ ) {
+                    "What is your choice ?");
+                int pace = myObj.nextInt();
 
-            } else if (true /*location == "Fort Kearney"*/ ) {
+                if (pace == 1) {
+                    //add steady pace
+                } else if (pace == 2) {
+                    //add strenuous pace
+                } else if (pace == 3) {
+                    //add grueling pace
+                } else if (pace == 4) {
+                    //explain differnet paces
+                }
+                //update pace
+                //go back to menu
+                } else if (menu_option == 5) {
+                    System.out.println("------------------------------------------\r\n" + //
+                        "\r\n" + //
+                        "\r\n" + //
+                        "\r\n" + //
+                        "------------------------------------------\r\n" + //
+                        "change food rations \r\n" + //
+                        "(currently " /*+ ration*/ + ")\r\n" + //
+                        "\r\n" + //
+                        "The amount of food the people in your party eat \r\n" + //
+                        "each day can change. These amounts are: \r\n" + //
+                        "\r\n" + //
+                        "1. filling - meals are large and generous \r\n" + //
+                        "2. meager - meals are small but adequate \r\n" + //
+                        "3. bare bones - meals are very small, everyone stays hungry \r\n" + //
+                        "\r\n" + //
+                        "What is your choice ?");
+                        int ration = myObj.nextInt();
 
-            } else if (true /*location == "Chimney Rock"*/ ) {
-
-            } else if (true /*location == "Fort Laramie"*/ ) {
-
-            } else if (true /*location == "Independence Rock"*/ ) {
-
-            } else if (true /*location == "South Pass"*/ ) {
-
-            } else if (true /*location == "Green River crossing"*/ ) {
-
-            } else if (true /*location == "Soda Springs"*/ ) {
-
-            } else if (true /*location == "Fort Hall"*/ ) {
-
-            } else if (true /*location == "Snake River crossing"*/ ) {
-
-            } else if (true /*location == "Fort Boise"*/ ) {
-
-            } else if (true /*location == "Blue mountains"*/ ) {
-                //trail divides here between Fort Walla Walla & The Dalles
-            } else if (true /*location == "Fort Walla Walla"*/ ) {
-
-            } else if (true /*location == "The Dalles"*/ ) {
-                //trail divides here between the Columbia River & the Barlow Toll Road
-            } else if (true /*location == "Columbia River"*/ ) {
-
-            } else if (true /*location == "Barlow Toll road"*/ ) {
-                
-            } else if (true /*location == "Willamette Valley"*/ ) {
-                //you win game
+                        if (ration == 1) {
+                            //add filling ration
+                        } else if (ration == 2) {
+                            //add meager ration
+                        } else if (ration == 3) {
+                            //add bare bones ration
+                        }
+                        //update food rations
+                        //go back to menu
+            } else if (menu_option == 6) {
+                System.out.println("How many days would you like to rest ?");
+                int days = myObj.nextInt();
+                //update date
+            } else if (menu_option == 7) {
+                //trade
+            } else if (menu_option == 8) {
+                TalkToPeople t = new TalkToPeople();
+                t.talkToPeople();
+            } else if (menu_option == 9) {
+                //buy supplies at forts
+            } else if (menu_option == 10) {
+                //wagon.hunt();
+                //hunt for food (extra)   
             }
-
-            //go back to menu
-        } else if (menu_option == 2) {
-            System.out.println("------------------------------------------\r\n" + //
-                "\r\n" + //
-                "\r\n" + //
-                "------------------------------------------\r\n" + //
-                "        Your Supplies \r\n" + //
-                "\r\n" + //
-                "oxen                " /*+ oxen */ + "\r\n" + //
-                "sets of clothes     " /*+ set of clothes */ + "\r\n" + //
-                "bullets             " /*+ bullets */ + "\r\n" + //
-                "wagon wheels        " /*+ wagon wheels */ + "\r\n" + //
-                "wagon axles         " /*+ wagon axles */ + "\r\n" + //
-                "wagon tongues       " /*+ wagon tongues */ + "\r\n" + //
-                "pounds of food      " /*+ pounds of food */ + "\r\n" + //
-                "money left          " /*+ money left */ + "\r\n" + //
-                "\r\n" + //
-                "Press SPACE BAR to continue\r\n" + //
-                "------------------------------------------\r\n\r\n\r\n");
-        } else if (menu_option == 3) {
-            //show map (extra)
-        } else if (menu_option == 4) {
-            System.out.println("\r\n" + //
-                "\r\n" + //
-                "------------------------------------------\r\n" + //
-                "Change pace (currently \"steady\")\r\n" + //
-                "\r\n" + //
-                "The pace at which you travel can change. Your choices are: \r\n" + //
-                "\r\n" + //
-                "    1. a steady pace \r\n" + //
-                "    2. a strenuous pace \r\n" + //
-                "    3. a grueling pace \r\n" + //
-                "    4. find out what these different paces mean \r\n" + //
-                "\r\n" + //
-                "What is your choice ?");
-            int pace = myObj.nextInt();
-
-            if (pace == 1) {
-                //add steady pace
-            } else if (pace == 2) {
-                //add strenuous pace
-            } else if (pace == 3) {
-                //add grueling pace
-            } else if (pace == 4) {
-                //explain differnet paces
-            }
-            //update pace
-            //go back to menu
-        } else if (menu_option == 5) {
-            System.out.println("------------------------------------------\r\n" + //
-                "\r\n" + //
-                "\r\n" + //
-                "\r\n" + //
-                "------------------------------------------\r\n" + //
-                "change food rations \r\n" + //
-                "(currently " /*+ ration*/ + ")\r\n" + //
-                "\r\n" + //
-                "The amount of food the people in your party eat \r\n" + //
-                "each day can change. These amounts are: \r\n" + //
-                "\r\n" + //
-                "1. filling - meals are large and generous \r\n" + //
-                "2. meager - meals are small but adequate \r\n" + //
-                "3. bare bones - meals are very small, everyone stays hungry \r\n" + //
-                "\r\n" + //
-                "What is your choice ?");
-            int ration = myObj.nextInt();
-
-            if (ration == 1) {
-                //add filling ration
-            } else if (ration == 2) {
-                //add meager ration
-            } else if (ration == 3) {
-                //add bare bones ration
-            }
-            //update food rations
-            //go back to menu
-        } else if (menu_option == 6) {
-            System.out.println("How many days would you like to rest ?");
-            int days = myObj.nextInt();
-            //update date
-        } else if (menu_option == 7) {
-            //trade
-        } else if (menu_option == 8) {
-            TalkToPeople t = new TalkToPeople();
-            t.talkToPeople();
-        } else if (menu_option == 9) {
-            //buy supplies at forts
-        } else if (menu_option == 10) {
-            //hunt for food (extra)   
         }
+            
     }
 }
