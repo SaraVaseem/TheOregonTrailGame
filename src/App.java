@@ -586,8 +586,8 @@ public class App {
         } else if (menu_option == 7) {
             //trade
         } else if (menu_option == 8) {
-            TalkToPeople t = new TalkToPeople();
-            t.talkToPeople();
+            //TalkToPeople t = new TalkToPeople();
+            //t.talkToPeople();
         } else if (menu_option == 9) {
             //buy supplies at forts
         } else if (menu_option == 10) {

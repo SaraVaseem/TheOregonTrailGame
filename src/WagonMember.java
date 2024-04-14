@@ -1,4 +1,4 @@
-public class WagonMember {
+public class WagonMember extends Wagon {
     //Health of party: good = 500 points
     //                 fair = 400 points
     //                 poor = 300 points
@@ -23,18 +23,23 @@ public class WagonMember {
     public static void updateHealth(String pace, String rations) {
         if(pace.equals("Steady")) {
             health += 2;
+            spacesPerDay += 2;
         } else if(pace.equals("Strenuous")) {
             health -= 1;
+            spacesPerDay += 3;
         } else if(pace.equals("Grueling")) {
             health -= 4;
+            spacesPerDay += 4;
         }
 
         if(rations.equals("Filling")) {
+            rations -= 3;
             health += 2;
         } else if(rations.equals("Meager")) {
-            health -= 1;
+            rations -= 2;
         } else if(rations.equals("Bare Bones")) {
-            health -= 2;
+            rations -= 1;
+            health -= 3;
         }
     }
 

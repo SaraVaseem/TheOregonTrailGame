@@ -1,5 +1,8 @@
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
+import java.beans.Transient;
+
 import static org.junit.Assert.assertFalse;
 import org.junit.Test;
 
@@ -11,10 +14,13 @@ public class Test {
     public void testUpdateHealth() {
         WagonMember.updateHealth("Steady", "Filling");
         assertEquals(health, 2);
+        assertEquals(spacesPerDay, 2);
         WagonMember.updateHealth("Strenuous", "Meager");
         assertEquals(health, 1);
+        assertEquals(spacesPerDay, 3);
         WagonMember.updateHealth("Grueling", "Bare Bones");
         assertEquals(health, -1);
+        assertEquals(spacesPerDay, 4);
     }
 
     @Test
