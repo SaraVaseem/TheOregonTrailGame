@@ -18,7 +18,6 @@ public class App {
         Scanner myObj = new Scanner(System.in);
         int choice = myObj.nextInt();
 
-        //add choice functionality
         if (choice == 1) {
             //travel the trail
         } else if (choice == 2) {
@@ -50,6 +49,7 @@ public class App {
             //turn sound off (extra)
         }
 
+        while(1) {
         System.out.println("------------------------------------------\r\n" + //
             "\r\n" + //
             "\r\n" + //
@@ -65,13 +65,27 @@ public class App {
             "        what is your choice ?");
         int role = myObj.nextInt();
 
-        //add role functionality
+        Wagon wagon = new Wagon();
+    
+        WagonLeader wagonLeader = new WagonLeader();
         if (role == 1) {
             //+1600 money left & normal points
+            wagonLeader.startOccupation = "Banker";
+            wagon.points = 100;
+            wagon.moneyLeft = 1600;
+            break;
         } else if (role == 2) {
             //+800 money left & twice as many points
+            wagonLeader.startOccupation = "Carpenter";
+            wagon.points = 200;
+            wagon.moneyLeft = 800;
+            break;
         } else if (role == 3) {
             //+ 400 money left & thrice as many points
+            wagonLeader.startOccupation = "Farmer";
+            wagon.points = 300;
+            wagon.moneyLeft = 400;
+            break;
         } else if (role == 4) {
             System.out.println("------------------------------------------\r\n" + //
                 "            Traveling to Oregon isn't easy! But if you're a banker, you'll have more money for supplies\r\n" + //
@@ -85,26 +99,31 @@ public class App {
                 "------------------------------------------");
             //go back to choices
         }
+    }
 
-
+        while(1) {
         System.out.println("------------------------------------------\r\n" + //
             "\r\n" + //
             "------------------------------------------\r\n" + //
             "        What is the first name of the wagon leader?");
         String wagon_leader_name = myObj.nextLine();
-
+        wagonLeader.name = wagon_leader_name;
         System.out.println("        What are the first names of the four other members of your party ?\r\n" + //
             "1. ");
         String member_1 = myObj.nextLine();
+        Wagonmember member1 = new Wagonmember(member_1);
 
         System.out.println("2. ");
         String member_2 = myObj.nextLine();
+        Wagonmember member2 = new Wagonmember(member_2);
 
         System.out.println("3. ");
         String member_3 = myObj.nextLine();
+        Wagonmember member3 = new Wagonmember(member_3);
 
         System.out.println("4. ");
         String member_4 = myObj.nextLine();
+        Wagonmember member4 = new Wagonmember(member_4);
 
         //add verification
         System.out.println("Are these names correct ? ");
@@ -112,10 +131,15 @@ public class App {
 
         if (verify == "yes") {
             //continue
+            break;
         } else {
             //go back to user name prompt 
         }
+    }
 
+    //add wagon members to constructor
+
+        while(1) {
         System.out.println("------------------------------------------\r\n" +
             "\r\n" + //
             "\r\n" + //
@@ -138,14 +162,19 @@ public class App {
         //add month functionality
         if (month == 1) {
             //update weather
+            break;
         } else if (month == 2) {
             //update weather
+            break;
         } else if (month == 3) {
             //update weather
+            break;
         } else if (month == 4) {
             //update weather
+            break;
         } else if (month == 5) {
             //update weather
+            break;
         } else if (month == 6) {
             System.out.println("\n\n\n" +
                 "------------------------------------------\n" +
@@ -159,12 +188,12 @@ public class App {
                 "------------------------------------------");
             //go back to month options
         }
-
+    }
         //add bill + inventory info        
         System.out.println("------------------------------------------\r\n\r\n\r\n\r\n" +
             "------------------------------------------\r\n" +
             "Before leaving Independence, you should buy equipment and supplies.\r\n" +
-            "You have $" /* +  money variable */ + " in cash, but you don't have to spend it all now.\r\n\r\n" +
+            "You have $" + wagon.moneyLeft + " in cash, but you don't have to spend it all now.\r\n\r\n" +
             "Press SPACE BAR to continue\r\n" +
             "------------------------------------------");
         System.out.println("\r\n" +
@@ -203,7 +232,7 @@ public class App {
             "----------------------------------------\r\n" +
             "Total bill: $0.00\r\n" +
             "\r\n" +
-            "Amount you have: $" /* + money variable */ + "\r\n" +
+            "Amount you have: $" wagon.moneyLeft + "\r\n" +
             "\r\n" +
             "Which item would you like to buy ?");
         int store_choice = myObj.nextInt();
@@ -351,6 +380,7 @@ public class App {
                 "------------------------------------------");
         }
 
+        Location location = new Location();
         System.out.println("\r\n" +
             "\r\n------------------------------------------\r\n" +
             "[Now loading the wagon]\r\n" +
@@ -358,7 +388,7 @@ public class App {
             "\r\n" +
             "\r\n" +
             "------------------------------------------\r\n" +
-            /* location + date */
+            location.location /* + date */
             "\r\n" +
             "\r\n" +
             "Press SPACE BAR to continue\r\n" +
@@ -370,8 +400,8 @@ public class App {
             "\r\n" +
             "Weather: " /* + weather*/ + " \r\n" +
             "Health: " /* + health*/ + " \r\n" +
-            "Pace: " /* + pace*/ + " \r\n" +
-            "Rations: " /* + rations*/ + " \r\n" +
+            "Pace: " + wagon.pace + " \r\n" +
+            "Rations: " + wagon.rations + " \r\n" +
             "----\r\n" +
             "You may: \r\n" +
             "    1. Continue on trail \r\n" +
@@ -391,7 +421,7 @@ public class App {
 
         //add menu functionality
         if (menu_option == 1) {
-            if (false /*location == "Independence"*/ ) {
+            if (location.location == "Independence") {
                 System.out.println("------------------------------------------\r\n" + //
                     "\r\n" + //
                     "\r\n" + //
@@ -424,7 +454,7 @@ public class App {
                     "\r\n" + //
                     "\r\n" + //
                     "");
-            } else if (true /*location == "Kansas River Crossing"*/ ) {
+            } else if (location.location == "Kansas River crossing") {
                 System.out.println("\n" +
                     "\n" +
                     "------------------------------------------\n" +
@@ -467,40 +497,519 @@ public class App {
                     "------------------------------------------\n" +
                     "\n" +
                     "");
-            } else if (true /*location == "Big Blue River crossing"*/ ) {
+            } else if (location.location == "Big Blue River crossing") {
+                System.out.println("\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "You are now at the Big Blue River crossing.\n" +
+                    "Would you like to look around ? Y\n" +
+                    "\n" +
+                    "Date: April 10, 1848\n" +
+                    "Weather: warm\n" +
+                    "Health: good\n" +
+                    "Food: 1900 pounds\n" +
+                    "Next landmark: 118 miles\n" +
+                    "Miles traveled: 182 miles\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "shows river stream\n" +
+                    "\n" +
+                    "Big Blue River crossing\n" +
+                    "April 10, 1848\n" +
+                    "\n" +
+                    "Press SPACE BAR to continue\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "");
+            } else if (location.location == "Fort Kearney") {
+                System.out.println("\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "You are now at Fort Kearney.\n" +
+                    "Would you like to look around ? Y\n" +
+                    "\n" +
+                    "Date: April 15, 1848\n" +
+                    "Weather: warm\n" +
+                    "Health: good\n" +
+                    "Food: 1850 pounds\n" +
+                    "Next landmark: 250 miles\n" +
+                    "Miles traveled: 250 miles\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "shows fort\n" +
+                    "\n" +
+                    "Fort Kearney\n" +
+                    "April 15, 1848\n" +
+                    "\n" +
+                    "Press SPACE BAR to continue\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "");
 
-            } else if (true /*location == "Fort Kearney"*/ ) {
+            } else if (location.location == "Chimney Rock") {
+                System.out.println("\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "You are now at Chimney Rock.\n" +
+                    "Would you like to look around ? Y\n" +
+                    "\n" +
+                    "Date: April 20, 1848\n" +
+                    "Weather: warm\n" +
+                    "Health: good\n" +
+                    "Food: 1800 pounds\n" +
+                    "Next landmark: 86 miles\n" +
+                    "Miles traveled: 304 miles\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "shows rock\n" +
+                    "\n" +
+                    "Chimney Rock\n" +
+                    "April 20, 1848\n" +
+                    "\n" +
+                    "Press SPACE BAR to continue\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "");
 
-            } else if (true /*location == "Chimney Rock"*/ ) {
+            } else if (location.location == "Fort Laramie") {
+                System.out.println("\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "You are now at Fort Laramie.\n" +
+                    "Would you like to look around ? Y\n" +
+                    "\n" +
+                    "Date: April 25, 1848\n" +
+                    "Weather: warm\n" +
+                    "Health: good\n" +
+                    "Food: 1750 pounds\n" +
+                    "Next landmark: 190 miles\n" +
+                    "Miles traveled: 494 miles\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "shows fort\n" +
+                    "\n" +
+                    "Fort Laramie\n" +
+                    "April 25, 1848\n" +
+                    "\n" +
+                    "Press SPACE BAR to continue\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "");
 
-            } else if (true /*location == "Fort Laramie"*/ ) {
+            } else if (location.location == "Independence Rock") {
+                System.out.println("\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "You are now at Independence Rock.\n" +
+                    "Would you like to look around ? Y\n" +
+                    "\n" +
+                    "Date: April 30, 1848\n" +
+                    "Weather: warm\n" +
+                    "Health: good\n" +
+                    "Food: 1700 pounds\n" +
+                    "Next landmark: 102 miles\n" +
+                    "Miles traveled: 576 miles\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "shows rock\n" +
+                    "\n" +
+                    "Independence Rock\n" +
+                    "April 30, 1848\n" +
+                    "\n" +
+                    "Press SPACE BAR to continue\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "");
 
-            } else if (true /*location == "Independence Rock"*/ ) {
+            } else if (location.location == "South Pass") {
+                System.out.println("\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "You are now at South Pass.\n" +
+                    "Would you like to look around ? Y\n" +
+                    "\n" +
+                    "Date: May 5, 1848\n" +
+                    "Weather: warm\n" +
+                    "Health: good\n" +
+                    "Food: 1650 pounds\n" +
+                    "Next landmark: 57 miles\n" +
+                    "Miles traveled: 633 miles\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "shows pass\n" +
+                    "\n" +
+                    "South Pass\n" +
+                    "May 5, 1848\n" +
+                    "\n" +
+                    "Press SPACE BAR to continue\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "");
 
-            } else if (true /*location == "South Pass"*/ ) {
-
-            } else if (true /*location == "Green River crossing"*/ ) {
-
-            } else if (true /*location == "Soda Springs"*/ ) {
-
-            } else if (true /*location == "Fort Hall"*/ ) {
-
-            } else if (true /*location == "Snake River crossing"*/ ) {
-
-            } else if (true /*location == "Fort Boise"*/ ) {
-
-            } else if (true /*location == "Blue mountains"*/ ) {
+            } else if (location.location == "Green River crossing") {
+                System.out.println("\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "You are now at Green River crossing.\n" +
+                    "Would you like to look around ? Y\n" +
+                    "\n" +
+                    "Date: May 10, 1848\n" +
+                    "Weather: warm\n" +
+                    "Health: good\n" +
+                    "Food: 1600 pounds\n" +
+                    "Next landmark: 125 miles\n" +
+                    "Miles traveled: 758 miles\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "shows river stream\n" +
+                    "\n" +
+                    "Green River crossing\n" +
+                    "May 10, 1848\n" +
+                    "\n" +
+                    "Press SPACE BAR to continue\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "");
+            } else if (location.location == "Soda Springs") {
+                System.out.println("\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "You are now at Soda Springs.\n" +
+                    "Would you like to look around ? Y\n" +
+                    "\n" +
+                    "Date: May 15, 1848\n" +
+                    "Weather: warm\n" +
+                    "Health: good\n" +
+                    "Food: 1550 pounds\n" +
+                    "Next landmark: 57 miles\n" +
+                    "Miles traveled: 815 miles\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "shows springs\n" +
+                    "\n" +
+                    "Soda Springs\n" +
+                    "May 15, 1848\n" +
+                    "\n" +
+                    "Press SPACE BAR to continue\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "");
+            } else if (location.location == "Fort Hall") {
+                System.out.println("\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "You are now at Fort Hall.\n" +
+                    "Would you like to look around ? Y\n" +
+                    "\n" +
+                    "Date: May 20, 1848\n" +
+                    "Weather: warm\n" +
+                    "Health: good\n" +
+                    "Food: 1500 pounds\n" +
+                    "Next landmark: 182 miles\n" +
+                    "Miles traveled: 997 miles\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "shows fort\n" +
+                    "\n" +
+                    "Fort Hall\n" +
+                    "May 20, 1848\n" +
+                    "\n" +
+                    "Press SPACE BAR to continue\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "");
+            } else if (location.location == "Snake River crossing") {
+                System.out.println("\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "You are now at Snake River crossing.\n" +
+                    "Would you like to look around ? Y\n" +
+                    "\n" +
+                    "Date: May 25, 1848\n" +
+                    "Weather: warm\n" +
+                    "Health: good\n" +
+                    "Food: 1450 pounds\n" +
+                    "Next landmark: 113 miles\n" +
+                    "Miles traveled: 1110 miles\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "shows river stream\n" +
+                    "\n" +
+                    "Snake River crossing\n" +
+                    "May 25, 1848\n" +
+                    "\n" +
+                    "Press SPACE BAR to continue\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "");
+            } else if (location.location == "Fort Boise") {
+                System.out.println("\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "You are now at Fort Boise.\n" +
+                    "Would you like to look around ? Y\n" +
+                    "\n" +
+                    "Date: May 30, 1848\n" +
+                    "Weather: warm\n" +
+                    "Health: good\n" +
+                    "Food: 1400 pounds\n" +
+                    "Next landmark: 160 miles\n" +
+                    "Miles traveled: 1273 miles\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "shows fort\n" +
+                    "\n" +
+                    "Fort Boise\n" +
+                    "May 30, 1848\n" +
+                    "\n" +
+                    "Press SPACE BAR to continue\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "");
+            } else if (location.location == "Blue Mountains") {
                 //trail divides here between Fort Walla Walla & The Dalles
-            } else if (true /*location == "Fort Walla Walla"*/ ) {
-
-            } else if (true /*location == "The Dalles"*/ ) {
+                System.out.println("\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "You are now at the Blue Mountains.\n" +
+                    "Would you like to look around ? Y\n" +
+                    "\n" +
+                    "Date: June 5, 1848\n" +
+                    "Weather: warm\n" +
+                    "Health: good\n" +
+                    "Food: 1350 pounds\n" +
+                    "Next landmark: 55 miles\n" +
+                    "Miles traveled: 1465 miles\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "shows mountains\n" +
+                    "\n" +
+                    "Blue Mountains\n" +
+                    "June 5, 1848\n" +
+                    "\n" +
+                    "Press SPACE BAR to continue\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "");
+            } else if (location.location == "Fort Walla Walla") {
+                System.out.println("\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "You are now at Fort Walla Walla.\n" +
+                    "Would you like to look around ? Y\n" +
+                    "\n" +
+                    "Date: June 10, 1848\n" +
+                    "Weather: warm\n" +
+                    "Health: good\n" +
+                    "Food: 1300 pounds\n" +
+                    "Next landmark: 55 miles\n" +
+                    "Miles traveled: 1520 miles\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "shows fort\n" +
+                    "\n" +
+                    "Fort Walla Walla\n" +
+                    "June 10, 1848\n" +
+                    "\n" +
+                    "Press SPACE BAR to continue\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "");
+            } else if (location.location == "The Dalles") {
                 //trail divides here between the Columbia River & the Barlow Toll Road
-            } else if (true /*location == "Columbia River"*/ ) {
-
-            } else if (true /*location == "Barlow Toll road"*/ ) {
-                
-            } else if (true /*location == "Willamette Valley"*/ ) {
+                System.out.println("\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "You are now at The Dalles.\n" +
+                    "Would you like to look around ? Y\n" +
+                    "\n" +
+                    "Date: June 15, 1848\n" +
+                    "Weather: warm\n" +
+                    "Health: good\n" +
+                    "Food: 1250 pounds\n" +
+                    "Next landmark: 100 miles\n" +
+                    "Miles traveled: 1620 miles\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "shows town\n" +
+                    "\n" +
+                    "The Dalles\n" +
+                    "June 15, 1848\n" +
+                    "\n" +
+                    "Press SPACE BAR to continue\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "");
+            } else if (location.location == "Columbia River") {
+                System.out.println("\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "You are now at the Columbia River.\n" +
+                    "Would you like to look around ? Y\n" +
+                    "\n" +
+                    "Date: June 20, 1848\n" +
+                    "Weather: warm\n" +
+                    "Health: good\n" +
+                    "Food: 1200 pounds\n" +
+                    "Next landmark: 100 miles\n" +
+                    "Miles traveled: 1720 miles\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "shows river stream\n" +
+                    "\n" +
+                    "Columbia River\n" +
+                    "June 20, 1848\n" +
+                    "\n" +
+                    "Press SPACE BAR to continue\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "");
+            } else if (location.location == "Barlow Toll road") {
+                System.out.println("\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "You are now at the Barlow Toll road.\n" +
+                    "Would you like to look around ? Y\n" +
+                    "\n" +
+                    "Date: June 25, 1848\n" +
+                    "Weather: warm\n" +
+                    "Health: good\n" +
+                    "Food: 1150 pounds\n" +
+                    "Next landmark: 100 miles\n" +
+                    "Miles traveled: 1820 miles\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "shows road\n" +
+                    "\n" +
+                    "Barlow Toll road\n" +
+                    "June 25, 1848\n" +
+                    "\n" +
+                    "Press SPACE BAR to continue\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "");
+            } else if (location.location == "Willamette Valley") {
                 //you win game
+                System.out.println("\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "Congratulations ! You have made it to Willamette Valley.\n" +
+                    "\n" +
+                    "Date: June 30, 1848\n" +
+                    "Weather: warm\n" +
+                    "Health: good\n" +
+                    "Food: 1100 pounds\n" +
+                    "Next landmark: 0 miles\n" +
+                    "Miles traveled: 2000 miles\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "\n" +
+                    "\n" +
+                    "------------------------------------------\n" +
+                    "shows valley\n" +
+                    "\n" +
+                    "Willamette Valley\n" +
+                    "June 30, 1848\n" +
+                    "\n");
             }
 
             //go back to menu
