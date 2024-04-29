@@ -6,11 +6,13 @@ public class Wagon {
     private int spacesPerDay;
     private String rations;
     private int livingMembers;
-    private ArrayList<WagonMember> listOfMembers = new ArrayList<>();
+    protected ArrayList<WagonMember> listOfMembers = new ArrayList<>();
     private double moneyLeft;
     private boolean wagonFunctional;
     private int points;
     private int pointMultiplier;
+
+    public Wagon(){}
 
     public Wagon(WagonMember member1, WagonMember member2, WagonMember member3, WagonMember member4, WagonMember member5, int multiplier, int money){
         this.listOfMembers.add(member1);
@@ -63,12 +65,21 @@ public class Wagon {
         }
     }
 
+    public String getRations(){
+        return this.rations;
+    }
+
     public int getSpacesPerDay(){
         return this.spacesPerDay;
     }
 
+    public void setSpacesPerDay(int num){
+        this.spacesPerDay += num;
+    }
+
     public void move(int spaces, Trail trail){
-        trail.spaces += spaces;
+        // move on trail
+        System.out.println("move to next space");
     }
     
     public void breakWheel(Wheel wheel){
