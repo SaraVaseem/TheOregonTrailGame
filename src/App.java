@@ -190,7 +190,7 @@ public class App {
         System.out.println("------------------------------------------\r\n\r\n\r\n\r\n" +
             "------------------------------------------\r\n" +
             "Before leaving Independence, you should buy equipment and supplies.\r\n" +
-            "You have $" /* +  money variable */ + " in cash, but you don't have to spend it all now.\r\n\r\n" +
+            "You have $" + wagon.moneyLeft + " in cash, but you don't have to spend it all now.\r\n\r\n" +
             "Press SPACE BAR to continue\r\n" +
             "------------------------------------------");
         System.out.println("\r\n" +
@@ -232,7 +232,7 @@ public class App {
             "----------------------------------------\r\n" +
             "Total bill: $0.00\r\n" +
             "\r\n" +
-            "Amount you have: $" /* + money variable */ + "\r\n" +
+            "Amount you have: $" wagon.moneyLeft + "\r\n" +
             "\r\n" +
             "Which item would you like to buy ?");
         store_choice = myObj.nextInt();
@@ -398,6 +398,7 @@ public class App {
 
         
 
+        Location location = new Location();
         System.out.println("\r\n" +
             "\r\n------------------------------------------\r\n" +
             "[Now loading the wagon]\r\n" +
@@ -405,7 +406,7 @@ public class App {
             "\r\n" +
             "\r\n" +
             "------------------------------------------\r\n" +
-            /* location + date */
+            location.location /* + date */
             "\r\n" +
             "\r\n" +
             "Press SPACE BAR to continue\r\n" +
@@ -423,8 +424,8 @@ public class App {
             "\r\n" +
             "Weather: " /* + weather*/ + " \r\n" +
             "Health: " /* + health*/ + " \r\n" +
-            "Pace: " /* + pace*/ + " \r\n" +
-            "Rations: " /* + rations*/ + " \r\n" +
+            "Pace: " + wagon.pace + " \r\n" +
+            "Rations: " + wagon.rations + " \r\n" +
             "----\r\n" +
             "You may: \r\n" +
             "    1. Continue on trail \r\n" +

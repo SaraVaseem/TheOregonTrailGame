@@ -12,7 +12,7 @@ public class Wagon {
     private int points;
     private int pointMultiplier;
 
-    public Wagon(){}
+    public Wagon() {}
 
     public Wagon(WagonMember member1, WagonMember member2, WagonMember member3, WagonMember member4, WagonMember member5, int multiplier, int money){
         this.listOfMembers.add(member1);

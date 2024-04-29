@@ -13,6 +13,17 @@ public class WagonMember extends Wagon {
     int immunityDuration;
     boolean starving;
 
+    public WagonMember(String name) {
+        this.name = name;
+        this.alive = true;
+        this.disease = null;
+        this.diseaseRisk = 0;
+        this.health = 500;
+        this.immunity = false;
+        this.immunityDuration = 0;
+        this.starving = false;
+    }
+
     public static void die() {
         if(health==0) {
             alive = false;
