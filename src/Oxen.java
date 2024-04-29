@@ -1,5 +1,6 @@
 public class Oxen extends Item{
     int count;
+    public Oxen(){}
     public Oxen(int count){
         this.count = count;
     }
