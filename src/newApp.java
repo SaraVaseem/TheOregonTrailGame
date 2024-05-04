@@ -5,7 +5,6 @@ public class App {
 
         Scanner myObj = new Scanner(System.in);
         int choice = 0;
-        myObj.close();
         //add choice functionality
         
         while(choice != 1){
@@ -58,8 +57,6 @@ public class App {
         int multiplier;
         int money;
         int role = 4;
-        String startOccupation = "";
-
          while(role == 4){
             System.out.println("------------------------------------------\r\n" + //
             "\r\n" + //
@@ -75,23 +72,19 @@ public class App {
             "\r\n" + //
             "        what is your choice ?");
             role = myObj.nextInt();
-
             //add role functionality
             if (role == 1) {
                 //+1600 money left & normal points
                 money = 1600;
                 multiplier = 1;
-                startOccupation = "banker";
             } else if (role == 2) {
                 //+800 money left & twice as many points
                 money = 800;
                 multiplier = 2;
-                startOccupation = "carpenter";
             } else if (role == 3) {
                 //+ 400 money left & thrice as many points
                 money = 400;
                 multiplier = 3;
-                startOccupation = "farmer";
             } else if (role == 4) {
                 System.out.println("------------------------------------------\r\n" + //
                     "            Traveling to Oregon isn't easy! But if you're a banker, you'll have more money for supplies\r\n" + //
@@ -135,15 +128,13 @@ public class App {
             if(verify.equals("yes") || verify.equals("y")) {
                 isNotCorrect = false;
             }
-            WagonLeader wagonLeader = new WagonLeader();
-            wagonLeader.name = wagon_leader_name;
-            wagonLeader.startOccupation = startOccupation;
-            WagonMember member1 = new WagonMember(member_1);
-            WagonMember member2 = new WagonMember(member_2);
-            WagonMember member3 = new WagonMember(member_3);
-            WagonMember member4 = new WagonMember(member_4);
+            // WagonLeader wagonLeader = new WagonLeader(wagon_leader_name, occupation);
+            // WagonMember member1 = new WagonMember(member_1);
+            // WagonMember member2 = new WagonMember(member_2);
+            // WagonMember member3 = new WagonMember(member_3);
+            // WagonMember member4 = new WagonMember(member_4);
 
-            Wagon wagon = new Wagon(wagonLeader, member1, member2, member3, member4, multiplier, money);
+            //Wagon wagon = new Wagon(wagonLeader, member1, member2, member3, member4, multiplier, money);
         } // end while loop
        
 
@@ -169,22 +160,16 @@ public class App {
             month = myObj.nextInt();
 
             //add month functionality
-            Calendar calendar;
             if (month == 1) {
                 //update weather
-                calendar = new Calendar(March, 1848);
             } else if (month == 2) {
                 //update weather
-                calendar = new Calendar(April, 1848);
             } else if (month == 3) {
                 //update weather
-                calendar = new Calendar(May, 1848);
             } else if (month == 4) {
                 //update weather
-                calendar = new Calendar(June, 1848);
             } else if (month == 5) {
                 //update weather
-                calendar = new Calendar(July, 1848);
             } else if (month == 6) {
                 System.out.println("\n\n\n" +
                     "------------------------------------------\n" +
@@ -232,12 +217,6 @@ public class App {
         
         MattsGeneralStore store = new MattsGeneralStore();
         int store_choice = 0;
-        Oxen oxen = new Oxen();
-        Food food = new Food();
-        ClothingSet clothing = new ClothingSet();
-        Bullets bullets = new Bullets();
-        SparePart spareParts = new SparePart();
-
         while(store_choice != 6){
             System.out.println("\r\n" +
             "\r\n------------------------------------------\r\n" +
@@ -246,11 +225,11 @@ public class App {
             " April 1, 1848\r\n" +
             "\r\n" +
             "-----------------------------------------\r\n" +
-            "1. Oxen                     $ " + oxen.getCount() + "\r\n" +
-            "2. food                     $ " + food.getCount() + "\r\n" +
-            "3. clothing                 $ " + clothing.getCount() + "\r\n" +
-            "4. ammunition               $ " + bullets.getCount() + "\r\n" +
-            "5. spare parts              $ " + spareParts.getCount() + "\r\n" +
+            "1. Oxen                     $ " /* + oxen */ + "\r\n" +
+            "2. food                     $ " /* + food */ + "\r\n" +
+            "3. clothing                 $ " /* + clothing */ + "\r\n" +
+            "4. ammunition               $ " /* + ammunition */ + "\r\n" +
+            "5. spare parts              $ " /* + spare part */ + "\r\n" +
             "6. checkout cart\r\n" +
             "----------------------------------------\r\n" +
             "Total bill: $0.00\r\n" +
@@ -344,7 +323,7 @@ public class App {
                     "How many boxes do you want?");
                 int boxes_of_ammo = myObj.nextInt();
                 //calculate price
-                //Bullets bullets = new Bullets();
+                Bullets bullets = new Bullets();
                 //store.sell("bullets", boxes_of_ammo, wagon, bullets);
                 System.out.println("\r\n" +
                     "            Bill so far: "+store.getTotalCost());
@@ -429,7 +408,7 @@ public class App {
             "\r\n" +
             "\r\n" +
             "------------------------------------------\r\n" +
-            location.location /* + date */ +
+            location.location +/* + date */
             "\r\n" +
             "\r\n" +
             "Press SPACE BAR to continue\r\n" +
@@ -475,7 +454,7 @@ public class App {
                         "------------------------------------------\r\n" + //
                         "From Independence it is 102 miles to Kansas River crossing\r\n" + //
                         "\r\n" + //
-                        "Date: " + "April 1, 1848" + "\r\n" + //
+                        "Date: " /* + date */ + "\r\n" + //
                         "Weather: " /* + weather */ + "\r\n" + //
                         "Health: " /* + health */ + "\r\n" + //
                         "Food: " /* + food */ + "\r\n" + //
@@ -1104,13 +1083,10 @@ public class App {
 
                 if (ration == 1) {
                     //add filling ration
-
                 } else if (ration == 2) {
                     //add meager ration
-
                 } else if (ration == 3) {
                     //add bare bones ration
-                    
                 }
                 //update food rations
                 //go back to menu
