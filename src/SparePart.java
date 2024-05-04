@@ -1,5 +1,6 @@
 public abstract class SparePart extends Item{
     int count;
+    public SparePart(){}
     public SparePart(int count){
         this.count = count;
     }

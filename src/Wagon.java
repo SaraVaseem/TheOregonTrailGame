@@ -9,7 +9,7 @@ public class Wagon {
     protected ArrayList<WagonMember> listOfMembers = new ArrayList<>();
     private double moneyLeft;
     private boolean wagonFunctional;
-    private int points;
+    protected int points;
     private int pointMultiplier;
 
     public Wagon() {}
@@ -123,14 +123,14 @@ public class Wagon {
         this.moneyLeft -= amount;
     }
 
-    public double getMoney(){
+    public double getMoneyLeft(){
         return this.moneyLeft;
     }
 
     public void huntForFood(Bullets bullets, Food food){
         Random rand = new Random();
-        int random = rand.nextInt(5);
-        if(random == 1){ // 1/5 chance of shooting something
+        int random = rand.nextInt(3);
+        if(random == 1){ // 1/3 chance of shooting something
             random = rand.nextInt(10); // different probabilities of type of animal hunted
             if(random == 0 || random == 1 || random == 2){
                 System.out.println("You shot a rabbit. +4 lbs of food.");
@@ -157,6 +157,7 @@ public class Wagon {
     public int calculatePoints(){
         return points * pointMultiplier;
     }
+
 }
 
 

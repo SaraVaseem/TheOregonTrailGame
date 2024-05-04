@@ -6,7 +6,7 @@ public class WagonLeader extends WagonMember {
     String startOccupation;
     boolean doomed;
 
-    public WagonLeader() {
+    public WagonLeader(String name, String startOccupation) {
         this.name = name;
         this.startOccupation = startOccupation;
         this.alive = true;
@@ -17,11 +17,12 @@ public class WagonLeader extends WagonMember {
         this.immunityDuration = 0;
         this.starving = false;
         this.doomed = false;
-        if(startOccupation.equals("Banker")) {
-            this.points = points;
-        } else if(startOccupation.equals("Carpenter")) {
-            this.points = points * 2;
-        } else if(startOccupation.equals("Farmer")) {
-            this.points = points * 3;
-        }
+        // if(startOccupation.equals("Banker")) {
+        //     this.points = points;
+        // } else if(startOccupation.equals("Carpenter")) {
+        //     this.points = points * 2;
+        // } else if(startOccupation.equals("Farmer")) {
+        //     this.points = points * 3;
+        //}
     }
+}
