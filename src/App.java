@@ -6,6 +6,7 @@ public class App {
 
         Scanner myObj = new Scanner(System.in);
         int choice = 0;
+        myObj.close();
         //add choice functionality
 
         while(choice != 1){
@@ -185,35 +186,35 @@ public class App {
             try {
                 month = myObj.nextInt();
 
-                //add month functionality
-                if (month == 1) {
-                    //update weather
-                } else if (month == 2) {
-                    //update weather
-                } else if (month == 3) {
-                    //update weather
-                } else if (month == 4) {
-                    //update weather
-                } else if (month == 5) {
-                    //update weather
-                } else if (month == 6) {
-                    System.out.println("\n\n\n" +
-                        "------------------------------------------\n" +
-                        "You attend a public meeting held for 'folks with the California Oregon fever'\n" +
-                        "You're told:\n\n" +
-                        "If you leave too early, there won't be any grass for your oxen to eat.\n" +
-                        "If you leave too late, you may not get to Oregon before winter comes.\n" +
-                        "If you leave at just the right time, there will be green grass and \n" +
-                        "the weather will still be cool.\n\n" +
-                        "Press SPACE BAR to continue\n" +
-                        "------------------------------------------");
-                    //go back to month options
-                } else {
-                    System.out.println("Invalid choice, try again.");
-                }
-            } catch(InputMismatchException e){
-                myObj.nextLine();
-                System.out.println("Invalid choice, try again.");
+            //add month functionality
+            Calendar calendar;
+            if (month == 1) {
+                //update weather
+                calendar = new Calendar(March, 1848);
+            } else if (month == 2) {
+                //update weather
+                calendar = new Calendar(April, 1848);
+            } else if (month == 3) {
+                //update weather
+                calendar = new Calendar(May, 1848);
+            } else if (month == 4) {
+                //update weather
+                calendar = new Calendar(June, 1848);
+            } else if (month == 5) {
+                //update weather
+                calendar = new Calendar(July, 1848);
+            } else if (month == 6) {
+                System.out.println("\n\n\n" +
+                    "------------------------------------------\n" +
+                    "You attend a public meeting held for 'folks with the California Oregon fever'\n" +
+                    "You're told:\n\n" +
+                    "If you leave too early, there won't be any grass for your oxen to eat.\n" +
+                    "If you leave too late, you may not get to Oregon before winter comes.\n" +
+                    "If you leave at just the right time, there will be green grass and \n" +
+                    "the weather will still be cool.\n\n" +
+                    "Press SPACE BAR to continue\n" +
+                    "------------------------------------------");
+                //go back to month options
             }
         }//end while loop
 
@@ -256,6 +257,12 @@ public class App {
         Wheel wheel = new Wheel();
         Tongue tongue = new Tongue();
         int store_choice = 0;
+        Oxen oxen = new Oxen();
+        Food food = new Food();
+        ClothingSet clothing = new ClothingSet();
+        Bullets bullets = new Bullets();
+        SparePart spareParts = new SparePart();
+
         while(store_choice != 6){
             System.out.println("\r\n" +
             "\r\n------------------------------------------\r\n" +
@@ -264,11 +271,11 @@ public class App {
             " April 1, 1848\r\n" +
             "\r\n" +
             "-----------------------------------------\r\n" +
-            "1. Oxen                     $ " /* + oxen */ + "\r\n" +
-            "2. food                     $ " /* + food */ + "\r\n" +
-            "3. clothing                 $ " /* + clothing */ + "\r\n" +
-            "4. ammunition               $ " /* + ammunition */ + "\r\n" +
-            "5. spare parts              $ " /* + spare part */ + "\r\n" +
+            "1. Oxen                     $ " + oxen.getCount() + "\r\n" +
+            "2. food                     $ " + food.getCount() + "\r\n" +
+            "3. clothing                 $ " + clothing.getCount() + "\r\n" +
+            "4. ammunition               $ " + bullets.getCount() + "\r\n" +
+            "5. spare parts              $ " + spareParts.getCount() + "\r\n" +
             "6. checkout cart\r\n" +
             "----------------------------------------\r\n" +
             "Total bill: $0.00\r\n" +
@@ -471,7 +478,7 @@ public class App {
             "\r\n" +
             "\r\n" +
             "------------------------------------------\r\n" +
-            location.location +/* + date */
+            location.location /* + date */ +
             "\r\n" +
             "\r\n" +
             "Press SPACE BAR to continue\r\n" +
