@@ -2,33 +2,33 @@ import java.util.ArrayList;
 
 public class Calendar {
     private int currentYear;
-    private Month currentMonth;
+    private String currentMonth;
     private int currentDay;
+    private ArrayList<Month> months = new ArrayList<Month>();
 
     public Calendar(String month, int year) {
         constructNewYear(month, year);
     }
 
-    private constructNewYear(String month, int year) {
+    private void constructNewYear(String month, int year) {
         this.currentYear = year;
-        Month January = new Month(January, 31);
+        Month January = new Month("January", 31);
+        int febDays = 28;
         if(this.currentYear % 4 == 0) {
-            Month February = new Month(February, 28);
-        } else {
-            Month February = new Month(February, 29);
+            febDays++;
         }
-        Month March = new Month(March, 31);
-        Month April = new Month(April, 30);
-        Month May = new Month(May, 31);
-        Month June = new Month(June, 30);
-        Month July = new Month(July, 31);
-        Month August = new Month(August, 31);
-        Month September = new Month(September, 30);
-        Month October = new Month(October, 31);
-        Month November = new Month(November, 30);
-        Month December = new Month (December, 31);
+        Month February = new Month("February", febDays);
+        Month March = new Month("March", 31);
+        Month April = new Month("April", 30);
+        Month May = new Month("May", 31);
+        Month June = new Month("June", 30);
+        Month July = new Month("July", 31);
+        Month August = new Month("August", 31);
+        Month September = new Month("September", 30);
+        Month October = new Month("October", 31);
+        Month November = new Month("November", 30);
+        Month December = new Month ("December", 31);
 
-        private ArrayList<Month> months = new ArrayList<>();
         months.add(January);
         months.add(February);
         months.add(March);
@@ -42,11 +42,11 @@ public class Calendar {
         months.add(November);
         months.add(December);
 
-        this.currrentMonth = month;
+        this.currentMonth = month;
         this.currentDay = 1;
     }
 
-    public updateDate() {
+    public void updateDate() {
         if(currentDay != currentMonth.getDays()) {
             currentDay++;
         } else if(!currentMonth.getName().equals("December")) {
@@ -54,6 +54,10 @@ public class Calendar {
         } else {
             constructNewYear(January, this.currentYear + 1);
         }
+    }
+
+    public int getYear() {
+        return this.currentYear;
     }
 
     public String getMonth() {

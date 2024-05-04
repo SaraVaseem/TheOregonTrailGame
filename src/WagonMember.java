@@ -1,4 +1,4 @@
-public class WagonMember extends Wagon {
+public class WagonMember {
     //Health of party: good = 500 points
     //                 fair = 400 points
     //                 poor = 300 points

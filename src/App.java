@@ -172,19 +172,19 @@ public class App {
             Calendar calendar;
             if (month == 1) {
                 //update weather
-                calendar = new Calendar(March, 1848);
+                calendar = new Calendar("March", 1848);
             } else if (month == 2) {
                 //update weather
-                calendar = new Calendar(April, 1848);
+                calendar = new Calendar("April", 1848);
             } else if (month == 3) {
                 //update weather
-                calendar = new Calendar(May, 1848);
+                calendar = new Calendar("May", 1848);
             } else if (month == 4) {
                 //update weather
-                calendar = new Calendar(June, 1848);
+                calendar = new Calendar("June", 1848);
             } else if (month == 5) {
                 //update weather
-                calendar = new Calendar(July, 1848);
+                calendar = new Calendar("July", 1848);
             } else if (month == 6) {
                 System.out.println("\n\n\n" +
                     "------------------------------------------\n" +

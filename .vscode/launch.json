@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "newMainOregonTrailMethod",
+            "request": "launch",
+            "mainClass": "newMainOregonTrailMethod",
+            "projectName": "TheOregonTrailGame_ea055d89"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "TheOregonTrailGame_ea055d89"
+        },
+        {
+            "type": "java",
             "name": "Wagon",
             "request": "launch",
             "mainClass": "Wagon",
