@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Disease extends WagonMember {
+public class Disease {
     String name;
     int severity;
     int duration;

@@ -11,10 +11,11 @@ public class Wagon {
     private boolean wagonFunctional;
     private int points;
     private int pointMultiplier;
+    private newInventory inv;
 
     public Wagon() {}
 
-    public Wagon(WagonMember member1, WagonMember member2, WagonMember member3, WagonMember member4, WagonMember member5, int multiplier, int money){
+    public Wagon(WagonLeader leader, WagonMember member1, WagonMember member2, WagonMember member3, WagonMember member4, int multiplier, int money){
         this.listOfMembers.add(member1);
         this.listOfMembers.add(member2);
         this.listOfMembers.add(member3);

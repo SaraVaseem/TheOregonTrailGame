@@ -1,10 +1,15 @@
-public abstract class Item {
-    private int count;
-    
-    public void setCount(int count){
-        this.count = count;
+public class Item {
+    private String name;
+
+    public Item() {
+        
     }
-    public int getCount(){
-        return count;
+
+    public Item(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
     }
 }

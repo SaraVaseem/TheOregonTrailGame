@@ -1,18 +1,14 @@
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class MattsGeneralStore {
-    private HashMap<String, Double> prices = new HashMap<>();
-    private double totalCost;
+    private newInventory prices;
+    private Scanner sc;
 
     public MattsGeneralStore(){
         // update prices later
-        prices.put("food", 0.20);
-        prices.put("oxen", 40.0);
-        prices.put("clothes", 10.0);
-        prices.put("bullets", 2.0);
-        prices.put("tongue", 10.0);
-        prices.put("axle", 10.0);
-        prices.put("wheel", 10.0);
+        prices = new newInventory(20, .2, 10, .1, 10, 10, 10);
+
     }
     
     public void sell(String key, int count, Wagon wagon, Item item){

@@ -47,12 +47,12 @@ public class Calendar {
     }
 
     public void updateDate() {
-        if(currentDay != currentMonth.getDays()) {
+        if(currentDay != months.get(months.indexOf(currentMonth)).getDays()) {
             currentDay++;
-        } else if(!currentMonth.getName().equals("December")) {
-            currentMonth = months(months.indexOf(this.currentMonth) + 1);
+        } else if(!currentMonth.equals("December")) {
+            currentMonth = months.get(months.indexOf(currentMonth) + 1).getName();
         } else {
-            constructNewYear(January, this.currentYear + 1);
+            constructNewYear("January", this.currentYear + 1);
         }
     }
 

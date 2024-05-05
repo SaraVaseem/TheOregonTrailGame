@@ -1,8 +1,5 @@
 public class Axle extends SparePart {
-
-    int count;
-
-    public Axle(int count) {
-        this.count = count;
+    public Axle() {
+        super("Axles");
     }
 }

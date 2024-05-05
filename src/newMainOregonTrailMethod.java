@@ -236,15 +236,11 @@ public class newMainOregonTrailMethod {
             "Before leaving Independence, you should buy equipment and supplies.\r\n" +
             "You have $" + 
             //wagon.moneyLeft + 
-            " in cash, but you don't have to spend it all now.\r\n\r\n" +
-            "Press SPACE BAR to continue\r\n" +
-            "------------------------------------------");
+            " in cash, but you don't have to spend it all now.\r\n\r\n");
         System.out.println("\r\n" +
             "------------------------------------------\r\n\r\n" +
             "You can buy whatever you need at Matt's General Store\r\n" +
-            "\r\n" +
-            "Press SPACE BAR to continue\r\n" +
-            "------------------------------------------");
+            "\r\n");
         System.out.println("\r\n\r\n" +
             "------------------------------------------\r\n" +
             "Hello, I'm Matt. So you're going to Oregon!\r\n" +
@@ -255,9 +251,7 @@ public class newMainOregonTrailMethod {
             "- plenty of food for the trip \r\n" +
             "- ammunition for your rifles \r\n" +
             "- spare parts for your wagon \r\n" +
-            "\r\n" +
-            "Press SPACE BAR to continue\r\n" +
-            "------------------------------------------");
+            "\r\n");
         
         
     }
