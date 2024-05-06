@@ -13,8 +13,6 @@ public class AppVer2 {
             "You may:\r\n" + //
             "    1. Travel the trail \r\n" + //
             "    2. Learn about the trail\r\n" + //
-            "    3. See the Oregon Top Ten \r\n" + //
-            "    4. Turn sound off \r\n" + //
             "\r\n" + //
             "What is your choice ?");
             try {
