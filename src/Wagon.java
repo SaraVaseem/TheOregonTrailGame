@@ -48,6 +48,10 @@ public class Wagon {
         }
     }
 
+    public String getPace(){
+        return this.pace;
+    }
+
     public void setRations(String rations, Food food){
         this.rations = rations;
         if(rations == "Generous"){
