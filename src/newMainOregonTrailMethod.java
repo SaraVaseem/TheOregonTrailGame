@@ -35,7 +35,11 @@ public class newMainOregonTrailMethod {
 
         switch(choice) {
             case 1 :
-                prepareToTravel();
+                chooseRole();
+                chooseNames();
+                chooseMonth();
+                mattsGeneralStore();
+                travelTheTrail();
                 break;
             case 2 :
                 System.out.println("What was it like to cross 2,000 miles of plains, rivers, and mountains in 1848?\r\n" + //
@@ -67,14 +71,6 @@ public class newMainOregonTrailMethod {
                 firstInterface();
                 break;
         }
-    }
-
-    private static void prepareToTravel() {
-        chooseRole();
-        chooseNames();
-        chooseMonth();
-        mattsGeneralStore();
-        travelTheTrail();
     }
 
     private static void chooseRole() {
