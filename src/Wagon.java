@@ -6,30 +6,35 @@ public class Wagon {
     private int spacesPerDay;
     private String rations;
     private int livingMembers;
-    protected ArrayList<WagonMember> listOfMembers = new ArrayList<>();
+    private WagonLeader leader;
+    private WagonMember member1;
+    private WagonMember member2;
+    private WagonMember member3;
+    private WagonMember member4;
     private double moneyLeft;
     private boolean wagonFunctional;
     private int points;
     private int pointMultiplier;
     private newInventory inv;
 
-    public Wagon() {}
+    public Wagon() {
 
-    public Wagon(WagonLeader leader, WagonMember member1, WagonMember member2, WagonMember member3, WagonMember member4, int multiplier, int money){
-        this.listOfMembers.add(member1);
-        this.listOfMembers.add(member2);
-        this.listOfMembers.add(member3);
-        this.listOfMembers.add(member4);
-        this.listOfMembers.add(member5);
+    }
+
+    public Wagon(WagonLeader leader, WagonMember member1, WagonMember member2, WagonMember member3, WagonMember member4, int money, newInventory inv){
+        this.leader = leader;
+        this.member1 = member1;
+        this.member2 = member2;
+        this.member3 = member3;
+        this.member4 = member4;
         this.wagonFunctional = true;
         this.pace = "Steady";
         this.rations = "Filling";
         this.livingMembers = 5;
-        this.pointMultiplier = multiplier;
         this.moneyLeft = money;
     }
 
-    public void setPace(String pace){
+    /*public void setPace(String pace){
         this.pace = pace;
         if(pace == "Steady"){
             this.spacesPerDay = 2;
@@ -157,6 +162,28 @@ public class Wagon {
 
     public int calculatePoints(){
         return points * pointMultiplier;
+    }*/
+
+    public void obtainItems(Item item, int count) {
+        /*if(item instanceof Bullets) {
+            
+        } else if(item instanceof ClothingSet) {
+
+        } else if(item instanceof Food) {
+
+        } else if(item instanceof Oxen) {
+
+        } else if(item instanceof SparePart) {
+            if(item instanceof Axle) {
+
+            } else if(item instanceof Tongue) {
+
+            } else if(item instanceof Wheel) {
+
+            }
+        }*/
+
+        inv.add(item, count);
     }
 }
 
