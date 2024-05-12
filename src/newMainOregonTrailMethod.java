@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class newMainOregonTrailMethod {
     static Scanner sc = new Scanner(System.in);
-    static newInventory inventory;
+    static NewInventory inventory;
     static Wagon wagon;
     static Calendar calendar;
     static WagonLeader wagonLeader;
@@ -13,6 +13,7 @@ public class newMainOregonTrailMethod {
     static Trail trail;
     static double money;
     static String occupation;
+    static ShoppingCart shoppingCart;
 
     public static void main(String[] args) {
         firstInterface();
@@ -38,6 +39,28 @@ public class newMainOregonTrailMethod {
                 chooseRole();
                 chooseNames();
                 chooseMonth();
+                System.out.println("------------------------------------------\r\n\r\n\r\n\r\n" +
+            "------------------------------------------\r\n" +
+            "Before leaving Independence, you should buy equipment and supplies.\r\n" +
+            "You have $" + 
+            //wagon.moneyLeft + 
+            " in cash, but you don't have to spend it all now.\r\n\r\n");
+        System.out.println("\r\n" +
+            "------------------------------------------\r\n\r\n" +
+            "You can buy whatever you need at Matt's General Store\r\n" +
+            "\r\n");
+        System.out.println("\r\n\r\n" +
+            "------------------------------------------\r\n" +
+            "Hello, I'm Matt. So you're going to Oregon!\r\n" +
+            "I can fix you up with what you need:\r\n" +
+            "\r\n" +
+            "- a team of oxen to pull your wagon \r\n" +
+            "- clothing for both summer and winter \r\n" +
+            "- plenty of food for the trip \r\n" +
+            "- ammunition for your rifles \r\n" +
+            "- spare parts for your wagon \r\n" +
+            "\r\n");
+                shoppingCart = new ShoppingCart();
                 mattsGeneralStore();
                 travelTheTrail();
                 break;
@@ -225,31 +248,57 @@ public class newMainOregonTrailMethod {
     }
 
     private static void mattsGeneralStore() {
-        MattsGeneralStore store = new MattsGeneralStore();
+        System.out.println("Here's what you've got so far:\n"
+        + "1. Oxen: $" + (shoppingCart.getCount(1) * shoppingCart.getPrice(1)) + "\n"
+        + "2. Food: $" + (shoppingCart.getCount(2) * shoppingCart.getPrice(2)) + "\n"
+        + "3. Clothes: $" + (shoppingCart.getCount(3) * shoppingCart.getPrice(3)) + "\n"
+        + "4. Bullets: $" + (shoppingCart.getCount(4) * shoppingCart.getPrice(4)) + "\n"
+        + "5. Axles: $" + (shoppingCart.getCount(5) * shoppingCart.getPrice(5)) + "\n"
+        + "6. Tongues: $" + (shoppingCart.getCount(6) * shoppingCart.getPrice(6)) + "\n"
+        + "7. Wheels: $" + (shoppingCart.getCount(7) * shoppingCart.getPrice(7)) + "\n"
+        + "\n What would you like to buy? (Select by entering a corresponding number, type 8 to check out)");
 
-        System.out.println("------------------------------------------\r\n\r\n\r\n\r\n" +
-            "------------------------------------------\r\n" +
-            "Before leaving Independence, you should buy equipment and supplies.\r\n" +
-            "You have $" + 
-            //wagon.moneyLeft + 
-            " in cash, but you don't have to spend it all now.\r\n\r\n");
-        System.out.println("\r\n" +
-            "------------------------------------------\r\n\r\n" +
-            "You can buy whatever you need at Matt's General Store\r\n" +
-            "\r\n");
-        System.out.println("\r\n\r\n" +
-            "------------------------------------------\r\n" +
-            "Hello, I'm Matt. So you're going to Oregon!\r\n" +
-            "I can fix you up with what you need:\r\n" +
-            "\r\n" +
-            "- a team of oxen to pull your wagon \r\n" +
-            "- clothing for both summer and winter \r\n" +
-            "- plenty of food for the trip \r\n" +
-            "- ammunition for your rifles \r\n" +
-            "- spare parts for your wagon \r\n" +
-            "\r\n");
-        
-        
+        int choice = sc.nextInt();
+        int newChoice;
+
+        switch(choice) {
+            case 1 :
+                System.out.println("\r\n\r\n------------------------------------------\r\n        Matt's General Store\r\n        Independence, Missouri\r\n                 April 1, 1848\r\n\r\nThere are 2 oxen in a yoke; I recommend at least 3 yoke.\r\nI charge $40 a yoke.\r\n\r\nHow many yoke do you want ?");
+                newChoice = sc.nextInt();
+                shoppingCart.setShoppingCart(choice, newChoice);
+                mattsGeneralStore();
+                break;
+            case 2 :
+                System.out.println("\r\n\r\n\r\n\r\n------------------------------------------\r\n        Matt's General Store\r\n        Independence, Missouri\r\n                 April 1, 1848\r\n\r\nI recommend you take at least 200 pounds of food for each person in your family.;\r\nI see that you have 5 people in all. You'll need flour, sugar, bacon, and coffee.\r\nMy price is 20 cents per pound.\r\n\r\nHow many pounds of food do you want ?");
+                newChoice = sc.nextInt();
+                shoppingCart.setShoppingCart(choice, newChoice);
+                mattsGeneralStore();
+                break;
+            case 3 :
+                System.out.println("\r\n\r\n\r\n\r\n------------------------------------------\r\n        Matt's General Store\r\n        Independence, Missouri\r\n                 April 1, 1848\r\n\r\nyou'll need warm clothing in the mountains. \r\nI recommend taking at least 2 sets of clothes per person.\r\nEach set is $10.00.\r\n\r\nHow many sets of clothes do you want ?");
+                newChoice = sc.nextInt();
+                shoppingCart.setShoppingCart(choice, newChoice);
+                mattsGeneralStore();
+                break;
+            case 4 :
+                System.out.println("\r\n\r\n\r\n\r\n------------------------------------------\r\n        Matt's General Store\r\n        Independence, Missouri\r\n                 April 1, 1848\r\n\r\nI sell ammunition in boxes of 20 bullets.\r\nEach box costs $2.00.\r\n\r\nHow many boxes do you want?");
+                newChoice = sc.nextInt();
+                shoppingCart.setShoppingCart(choice, newChoice);
+                mattsGeneralStore();
+                break;
+            case 5 :
+
+            case 6 :
+
+            case 7 :
+
+            case 8 :
+
+            default :
+                System.out.println("Please enter a valid option.");
+                mattsGeneralStore();
+                break;
+        }
     }
 
     private static void travelTheTrail() {

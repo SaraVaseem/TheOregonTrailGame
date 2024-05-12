@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class newInventory {
+public class NewInventory {
     private int oxenCount;
     private int foodCount;
     private int clothingCount;
@@ -18,7 +18,7 @@ public class newInventory {
     private Tongue tongues;
     private Wheel wheels;
 
-    public newInventory() {
+    public NewInventory() {
         this.completeInventory = new HashMap<Item, Integer>();
         this.oxenCount = 0;
         this.foodCount = 0;
@@ -31,7 +31,7 @@ public class newInventory {
         inventoryConstructor();
     }
 
-    public newInventory(int oxen, int food, int clothing, int ammunition, int axles, int tongues, int wheels) {
+    public NewInventory(int oxen, int food, int clothing, int ammunition, int axles, int tongues, int wheels) {
         this.completeInventory = new HashMap<Item, Integer>();
         this.oxenCount = oxen;
         this.foodCount = food;
@@ -44,7 +44,7 @@ public class newInventory {
         inventoryConstructor();
     }
 
-    public newInventory(double oxen, double food, double clothing, double ammunition, double axles, double tongues, double wheels) {
+    public NewInventory(double oxen, double food, double clothing, double ammunition, double axles, double tongues, double wheels) {
         this.merchantInventory = new HashMap<Item, Double>();
         itemConstructor();
         merchantInventory.put(this.oxen, oxen);
