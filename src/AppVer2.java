@@ -171,23 +171,23 @@ public class AppVer2 {
                 switch(month) {
                     case 1:
                         //update weather
-                        //calendar = new Calendar(March, 1848);
+                        calendar = new Calendar("March", 1848);
                         break;
                     case 2:
                         //update weather
-                        //calendar = new Calendar(April, 1848);
+                        calendar = new Calendar("April", 1848);
                         break;
                     case 3:
                         //update weather
-                        //calendar = new Calendar(May, 1848);
+                        calendar = new Calendar("May", 1848);
                         break;
                     case 4:
                         //update weather
-                        //calendar = new Calendar(June, 1848);
+                        calendar = new Calendar("June", 1848);
                         break;
                     case 5:
                         //update weather
-                        //calendar = new Calendar(July, 1848);
+                        calendar = new Calendar("July", 1848);
                         break;
                     case 6:
                         System.out.println("\n\n\n" +
