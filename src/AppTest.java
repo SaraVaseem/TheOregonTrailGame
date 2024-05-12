@@ -30,7 +30,7 @@ public class AppTest {
     public void checkMoneyAfterSelling(){
         ClothingSet clothes  = new ClothingSet();
         store.sell("clothes", 6, wagon, clothes);
-        assertEquals(1540, wagon.getMoney(), 0.001);
+        assertEquals(1540, wagon.getMoneyLeft(), 0.001);
     }
 
     @Test
