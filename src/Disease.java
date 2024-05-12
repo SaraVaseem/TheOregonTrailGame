@@ -22,21 +22,21 @@ public class Disease extends WagonMember {
 
     public static boolean isContagious() {
         // return true if the disease is contagious
-        return severity > 5;
+        return this.severity > 5;
     }
 
     public static String getName() {
-        return name;
+        return this.name;
     }
 
     public static int getSeverity() {
-        return severity;
+        return this.severity;
     }
 
     public static void updateDuration() {
-        duration--;
-        if(duration == 0) {
-            disease = null;
+        this.duration--;
+        if(this.duration == 0) {
+            this.disease = null;
         }
     }
 }

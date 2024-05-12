@@ -3,45 +3,45 @@ public class Location {
     String location;
     int milesTraveled;
 
-    //update location based on miles traveled
-    public static void updateLocation(int milesTraveled) {
-        //update location
+    //updatethis.location based on miles traveled
+    public void updateLocation(int milesTraveled) {
+        //updatethis.location
         if(milesTraveled == 0){
-           location = "Independence"; 
+           this.location = "Independence"; 
         } else if(milesTraveled == 102){
-            location = "Kansas River Crossing";
+            this.location = "Kansas River Crossing";
         } else if(milesTraveled == 204){
-            location = "Big Blue River Crossing";
+            this.location = "Big Blue River Crossing";
         } else if(milesTraveled == 300){
-            location = "Fort Kearney";
+            this.location = "Fort Kearney";
         } else if(milesTraveled == 554){
-            location = "Chimney Rock";
+            this.location = "Chimney Rock";
         } else if(milesTraveled == 640){
-            location = "Fort Laramie";
+            this.location = "Fort Laramie";
         } else if(milesTraveled == 932){
-            location = "Independence Rock";
+            this.location = "Independence Rock";
         } else if(milesTraveled == 1024){
-            location = "South Pass";
+            this.location = "South Pass";
         } else if(milesTraveled == 1180){
-            location = "Green River";
+            this.location = "Green River";
         } else if(milesTraveled == 1286){
-            location = "Soda Springs";
+            this.location = "Soda Springs";
         } else if(milesTraveled == 1440){
-            location = "Fort Hall";
+            this.location = "Fort Hall";
         } else if(milesTraveled == 1640){
-            location = "Snake River Crossing";
+           this.location = "Snake River Crossing";
         } else if(milesTraveled == 1864){
-            location = "Fort Boise";
+           this.location = "Fort Boise";
         } else if(milesTraveled == 1936){
-            location = "Blue Mountains";
+           this.location = "Blue Mountains";
         } else if(milesTraveled == 2046){
-            location = "Fort Walla Walla";
+           this.location = "Fort Walla Walla";
         } else if(milesTraveled == 2100){
-            location = "The Dalles";
+           this.location = "The Dalles";
         } else if(milesTraveled == 2226){
-            location = "Barlow Toll Road";
+           this.location = "Barlow Toll Road";
         } else if(milesTraveled == 2256){
-            location = "Willamette Valley";
+           this.location = "Willamette Valley";
         }
     }
 }

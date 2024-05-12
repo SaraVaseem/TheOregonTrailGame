@@ -1,4 +1,4 @@
-import java.util.Random
+import java.util.Random;
 
 public class RiverSpace extends LandmarkSpace {
    private int across;
@@ -36,7 +36,7 @@ public class RiverSpace extends LandmarkSpace {
       wagon.updateMoney(ferryPrice);
    }
    
-   public int getLength() [
+   public int getLength() {
       return this.across;
    }
    

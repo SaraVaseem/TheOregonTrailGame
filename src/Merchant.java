@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Random;
 
-public class Merchant {
+public class Merchant extends Inventory {
    private HashMap<Item, Double> availableItems = new HashMap<>();
    Random rand = new Random();
    
@@ -20,21 +20,25 @@ public class Merchant {
          
          switch(singleItem) {
             case 1 :
-               availableItems.put(Food, randomlyDeterminePrice(Food));
+               availableItems.put("Food", randomlyDeterminePrice(Food));
             case 2 :
-               availableItems.put(Oxen, randomlyDeterminePrice(Oxen));
+               availableItems.put("Oxen", randomlyDeterminePrice(Oxen));
             case 3 :
-               availableItems.put(Clothes, randomlyDeterminePrice(Clothes));
+               availableItems.put("Clothes", randomlyDeterminePrice(Clothes));
             case 4 :
-               availableItems.put(Bullets, randomlyDeterminePrice(Bullets));
+               availableItems.put("Bullets", randomlyDeterminePrice(Bullets));
             case 5 :
-               availableItems.put(Tongue, randomlyDeterminePrice(Tongue));
+               availableItems.put("Tongue", randomlyDeterminePrice(Tongue));
             case 6 :
-               availableItems.put(Axle, randomlyDeterminePrice(Axle));
+               availableItems.put("Axle", randomlyDeterminePrice(Axle));
             case 7 :
-               availableItems.put(Wheel, randomlyDeterminePrice(Wheel));
+               availableItems.put("Wheel", randomlyDeterminePrice(Wheel));
          }
       }
+   }
+
+   public int getPrice(Item item) {
+      return availableItems.get(item);
    }
    
    private void maybeInSet(Item item) {

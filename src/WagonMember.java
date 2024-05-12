@@ -26,68 +26,68 @@ public class WagonMember extends Wagon {
     }
 
     public static void die() {
-        if(health==0) {
-            alive = false;
+        if(this.health==0) {
+            this.alive = false;
         }
-        System.out.println(name + " has died.");
+        System.out.println(this.name + " has died.");
     }
 
     public static void updateHealth(String pace, String rations) {
         if(pace.equals("Steady")) {
-            health += 2;
-            spacesPerDay += 2;
+            this.health += 2;
+            this.spacesPerDay += 2;
         } else if(pace.equals("Strenuous")) {
-            health -= 1;
-            spacesPerDay += 3;
+            this.health -= 1;
+            this.spacesPerDay += 3;
         } else if(pace.equals("Grueling")) {
-            health -= 4;
-            spacesPerDay += 4;
+            this.health -= 4;
+            this.spacesPerDay += 4;
         }
 
         if(rations.equals("Filling")) {
-            rations -= 3;
-            health += 2;
+            //rations -= 3;
+            this.health += 2;
         } else if(rations.equals("Meager")) {
-            rations -= 2;
+            //rations -= 2;
         } else if(rations.equals("Bare Bones")) {
-            rations -= 1;
-            health -= 3;
+            //rations -= 1;
+            this.health -= 3;
         }
     }
 
     public static void updateDisease() {
-        if(diseaseRisk > 0.5) {
-            disease = Disease.getRandomDisease();
+        if(this.diseaseRisk > 0.5) {
+            this.disease = Disease.getRandomDisease();
         }
     }
 
     public static void updateDiseaseRisk() {
-        if(immunity) {
-            diseaseRisk = 0;
+        if(this.immunity) {
+            this.diseaseRisk = 0;
         } else {
-            diseaseRisk = 0.5;
+            this.diseaseRisk = 0.5;
         }
     }
 
     public static void updateImmunity() {
-        if(disease != null) {
-            immunity = disease.isContagious();
+        if(this.disease != null) {
+            this.immunity = disease.isContagious();
         }
     }
 
     public static void updateImmunityDuration() {
-        if(immunity) {
-            immunityDuration = 5;
+        if(this.immunity) {
+            this.immunityDuration = 5;
         } else {
-            immunityDuration = 0;
+            this.immunityDuration = 0;
         }
     }
 
     public static void updateStarving() {
         if(rations.equals("Bare Bones")) {
-            starving = true;
+            this.starving = true;
         } else {
-            starving = false;
+            this.starving = false;
         }
     }    
 }

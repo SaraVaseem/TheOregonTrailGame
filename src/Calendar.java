@@ -4,13 +4,13 @@ public class Calendar {
     private int currentYear;
     private String currentMonth;
     private int currentDay;
-    private ArrayList<Month> months = new ArrayList<Month>();
+    public ArrayList<Month> months = new ArrayList<Month>();
 
     public Calendar(String month, int year) {
         constructNewYear(month, year);
     }
 
-    private void constructNewYear(String month, int year) {
+    public void constructNewYear(String month, int year) {
         this.currentYear = year;
         Month January = new Month("January", 31);
         int febDays = 28;

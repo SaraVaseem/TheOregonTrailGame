@@ -156,13 +156,13 @@ public class App {
             }
 
         } // end while loop
-        WagonLeader wagonLeader = new WagonLeader(wagon_leader_name, occupation);
-        WagonMember member1 = new WagonMember(member_1);
-        WagonMember member2 = new WagonMember(member_2);
-        WagonMember member3 = new WagonMember(member_3);
-        WagonMember member4 = new WagonMember(member_4);
+        // WagonLeader wagonLeader = new WagonLeader(wagon_leader_name, occupation);
+        // WagonMember member1 = new WagonMember(member_1);
+        // WagonMember member2 = new WagonMember(member_2);
+        // WagonMember member3 = new WagonMember(member_3);
+        // WagonMember member4 = new WagonMember(member_4);
 
-        Wagon wagon = new Wagon(wagonLeader, member1, member2, member3, member4, multiplier, money);
+        // Wagon wagon = new Wagon(wagonLeader, member1, member2, member3, member4, multiplier, money);
 
         int month = -1;
         while(month < 1 || month > 5){
@@ -252,17 +252,17 @@ public class App {
             "Press SPACE BAR to continue\r\n" +
             "------------------------------------------");
         
-        MattsGeneralStore store = new MattsGeneralStore();
-        Oxen oxen = new Oxen();
-        Food food = new Food();
-        ClothingSet clothing = new ClothingSet();
-        Bullets bullets  = new Bullets();
-        Axle axle = new Axle();
-        Wheel wheel = new Wheel();
-        Tongue tongue = new Tongue();
-        int store_choice = 0;
+        // MattsGeneralStore store = new MattsGeneralStore();
+        // Oxen oxen = new Oxen();
+        // Food food = new Food();
+        // ClothingSet clothing = new ClothingSet();
+        // Bullets bullets  = new Bullets();
+        // Axle axle = new Axle();
+        // Wheel wheel = new Wheel();
+        // Tongue tongue = new Tongue();
+        // int store_choice = 0;
 
-        while(store_choice != 6){
+        //while(store_choice != 6){
             System.out.println("\r\n" +
             "\r\n------------------------------------------\r\n" +
             "        Matt's General Store\r\n" +
@@ -270,21 +270,21 @@ public class App {
             " April 1, 1848\r\n" +
             "\r\n" +
             "-----------------------------------------\r\n" +
-            "1. Oxen                     $ " + oxen.getCount() + "\r\n" +
-            "2. food                     $ " + food.getCount() + "\r\n" +
-            "3. clothing                 $ " + clothing.getCount() + "\r\n" +
-            "4. ammunition               $ " + bullets.getCount() + "\r\n" +
-            "5. spare parts              $ " + wheel.getCount()+tongue.getCount()+axle.getCount() + "\r\n" +
+            "1. Oxen                     $ " /*+ oxen.getCount()*/ + "\r\n" +
+            "2. food                     $ " /*+ food.getCount()*/ + "\r\n" +
+            "3. clothing                 $ " /*+ clothing.getCount()*/ + "\r\n" +
+            "4. ammunition               $ " /*+ bullets.getCount()*/ + "\r\n" +
+            "5. spare parts              $ " /*+ wheel.getCount()+tongue.getCount()+axle.getCount()*/ + "\r\n" +
             "6. checkout cart\r\n" +
             "----------------------------------------\r\n" +
             "Total bill: $0.00\r\n" +
             "\r\n" +
-            "Amount you have: $" +wagon.getMoneyLeft() + "\r\n" +
+            "Amount you have: $" /*+wagon.getMoneyLeft()*/ + "\r\n" +
             "\r\n" +
             "Which item would you like to buy ?");
 
             try {
-                store_choice = myObj.nextInt();
+                int store_choice = myObj.nextInt();
 
             //add Matt's store functionality
             if (store_choice == 1) {
@@ -306,9 +306,9 @@ public class App {
     
                     //calculate price
                 }
-                store.sell("oxen", num_of_yokes, wagon, oxen);
+                //store.sell("oxen", num_of_yokes, wagon, oxen);
                 System.out.println("\r\n" +
-                    "            Bill so far: "+ store.getTotalCost() );
+                    "            Bill so far: "/*+ store.getTotalCost()*/ );
                 //go back to main store
 
                 } else if (store_choice == 2) {
@@ -331,9 +331,9 @@ public class App {
                         pounds_of_food = myObj.nextInt();
                         //calculate price
                     }
-                    store.sell("food", pounds_of_food, wagon, food);
+                    //store.sell("food", pounds_of_food, wagon, food);
                     System.out.println("\r\n" +
-                        "            Bill so far: " +store.getTotalCost());
+                        "            Bill so far: " /*+store.getTotalCost()*/);
                     //go back to main store
 
                 } else if (store_choice == 3) {
@@ -357,9 +357,9 @@ public class App {
                         //calculate price
                     }
 
-                    store.sell("clothes", sets_of_clothing, wagon, clothing);
+                    //store.sell("clothes", sets_of_clothing, wagon, clothing);
                     System.out.println("\r\n" +
-                        "            Bill so far: "+store.getTotalCost());
+                        "            Bill so far: "/*+store.getTotalCost()*/);
                     //go back to main store
 
                 } else if (store_choice == 4) {
@@ -383,9 +383,9 @@ public class App {
                         //calculate price
                     }
 
-                    store.sell("bullets", boxes_of_ammo, wagon, bullets);
+                    //store.sell("bullets", boxes_of_ammo, wagon, bullets);
                     System.out.println("\r\n" +
-                        "            Bill so far: "+store.getTotalCost());
+                        "            Bill so far: "/*+store.getTotalCost()*/);
                     //go back to main store
 
                 } else if (store_choice == 5) {
@@ -439,11 +439,11 @@ public class App {
 
                     //calculate price
 
-                    store.sell("wheel", wheels, wagon, wheel);
-                    store.sell("axle", axles, wagon, axle);
-                    store.sell("tongue", tongues, wagon, tongue);
+                    // store.sell("wheel", wheels, wagon, wheel);
+                    // store.sell("axle", axles, wagon, axle);
+                    // store.sell("tongue", tongues, wagon, tongue);
                     System.out.println("\r\n" +
-                        "            Bill so far: "+store.getTotalCost());
+                        "            Bill so far: "/*+ store.getTotalCost()*/);
                     //go back to main store
                 } else if (store_choice == 6) {
                     //add items to invemtory & subtract from money left
@@ -467,9 +467,9 @@ public class App {
                 myObj.nextLine();
                 System.out.println("Invalid choice, try again.");
             }
-        }// end while loop
+        //}// end while loop
 
-        Location location = new Location();
+        //Location location = new Location();
         System.out.println("\r\n" +
             "\r\n------------------------------------------\r\n" +
             "[Now loading the wagon]\r\n" +
@@ -477,7 +477,7 @@ public class App {
             "\r\n" +
             "\r\n" +
             "------------------------------------------\r\n" +
-            location.location /* + date */ +
+            //location.location /* + date */ +
             "\r\n" +
             "\r\n" +
             "Press SPACE BAR to continue\r\n" +
@@ -516,7 +516,7 @@ public class App {
 
                 //add menu functionality
                 if (menu_option == 1) {
-                    if (location.location == "Independence") {
+                    //if (location.location == "Independence") {
                         System.out.println("------------------------------------------\r\n" + //
                             "\r\n" + //
                             "\r\n" + //
@@ -541,7 +541,7 @@ public class App {
                             "\r\n" + //
                             "\r\n" + //
                             "");
-                    } else if (location.location == "Kansas River crossing") {
+                    //} else if (location.location == "Kansas River crossing") {
                         System.out.println("\n" +
                             "\n" +
                             "------------------------------------------\n" +
@@ -568,7 +568,7 @@ public class App {
                             "------------------------------------------\n" +
                             "\n" +
                             "");
-                    } else if (location.location == "Big Blue River crossing") {
+                    //} else if (location.location == "Big Blue River crossing") {
                         System.out.println("\n" +
                             "\n" +
                             "------------------------------------------\n" +
@@ -598,7 +598,7 @@ public class App {
                             "------------------------------------------\n" +
                             "\n" +
                             "");
-                    } else if (location.location == "Fort Kearney") {
+                    //} else if (location.location == "Fort Kearney") {
                         System.out.println("\n" +
                             "\n" +
                             "------------------------------------------\n" +
@@ -629,7 +629,7 @@ public class App {
                             "\n" +
                             "");
     
-                    } else if (location.location == "Chimney Rock") {
+                    //} else if (location.location == "Chimney Rock") {
                         System.out.println("\n" +
                             "\n" +
                             "------------------------------------------\n" +
@@ -660,7 +660,7 @@ public class App {
                             "\n" +
                             "");
     
-                    } else if (location.location == "Fort Laramie") {
+                    //} else if (location.location == "Fort Laramie") {
                         System.out.println("\n" +
                             "\n" +
                             "------------------------------------------\n" +
@@ -691,7 +691,7 @@ public class App {
                             "\n" +
                             "");
     
-                    } else if (location.location == "Independence Rock") {
+                    //} else if (location.location == "Independence Rock") {
                         System.out.println("\n" +
                             "\n" +
                             "------------------------------------------\n" +
@@ -722,7 +722,7 @@ public class App {
                             "\n" +
                             "");
     
-                    } else if (location.location == "South Pass") {
+                    //} else if (location.location == "South Pass") {
                         System.out.println("\n" +
                             "\n" +
                             "------------------------------------------\n" +
@@ -753,7 +753,7 @@ public class App {
                             "\n" +
                             "");
     
-                    } else if (location.location == "Green River crossing") {
+                    //} else if (location.location == "Green River crossing") {
                         System.out.println("\n" +
                             "\n" +
                             "------------------------------------------\n" +
@@ -783,7 +783,7 @@ public class App {
                             "------------------------------------------\n" +
                             "\n" +
                             "");
-                    } else if (location.location == "Soda Springs") {
+                    //} else if (location.location == "Soda Springs") {
                         System.out.println("\n" +
                             "\n" +
                             "------------------------------------------\n" +
@@ -813,7 +813,7 @@ public class App {
                             "------------------------------------------\n" +
                             "\n" +
                             "");
-                    } else if (location.location == "Fort Hall") {
+                    //} else if (location.location == "Fort Hall") {
                         System.out.println("\n" +
                             "\n" +
                             "------------------------------------------\n" +
@@ -843,7 +843,7 @@ public class App {
                             "------------------------------------------\n" +
                             "\n" +
                             "");
-                    } else if (location.location == "Snake River crossing") {
+                    //} else if (location.location == "Snake River crossing") {
                         System.out.println("\n" +
                             "\n" +
                             "------------------------------------------\n" +
@@ -873,7 +873,7 @@ public class App {
                             "------------------------------------------\n" +
                             "\n" +
                             "");
-                    } else if (location.location == "Fort Boise") {
+                    //} else if (location.location == "Fort Boise") {
                         System.out.println("\n" +
                             "\n" +
                             "------------------------------------------\n" +
@@ -903,7 +903,7 @@ public class App {
                             "------------------------------------------\n" +
                             "\n" +
                             "");
-                    } else if (location.location == "Blue Mountains") {
+                    //} else if (location.location == "Blue Mountains") {
                         //trail divides here between Fort Walla Walla & The Dalles
                         System.out.println("\n" +
                             "\n" +
@@ -934,7 +934,7 @@ public class App {
                             "------------------------------------------\n" +
                             "\n" +
                             "");
-                    } else if (location.location == "Fort Walla Walla") {
+                    //} else if (location.location == "Fort Walla Walla") {
                         System.out.println("\n" +
                             "\n" +
                             "------------------------------------------\n" +
@@ -964,7 +964,7 @@ public class App {
                             "------------------------------------------\n" +
                             "\n" +
                             "");
-                    } else if (location.location == "The Dalles") {
+                    //} else if (location.location == "The Dalles") {
                         //trail divides here between the Columbia River & the Barlow Toll Road
                         System.out.println("\n" +
                             "\n" +
@@ -995,7 +995,7 @@ public class App {
                             "------------------------------------------\n" +
                             "\n" +
                             "");
-                    } else if (location.location == "Columbia River") {
+                    //} else if (location.location == "Columbia River") {
                         System.out.println("\n" +
                             "\n" +
                             "------------------------------------------\n" +
@@ -1025,7 +1025,7 @@ public class App {
                             "------------------------------------------\n" +
                             "\n" +
                             "");
-                    } else if (location.location == "Barlow Toll road") {
+                    //} else if (location.location == "Barlow Toll road") {
                         System.out.println("\n" +
                             "\n" +
                             "------------------------------------------\n" +
@@ -1055,7 +1055,7 @@ public class App {
                             "------------------------------------------\n" +
                             "\n" +
                             "");
-                    } else if (location.location == "Willamette Valley") {
+                    //} else if (location.location == "Willamette Valley") {
                         //you win game
                         System.out.println("\n" +
                             "\n" +
@@ -1081,7 +1081,7 @@ public class App {
                             "Willamette Valley\n" +
                             "June 30, 1848\n" +
                             "\n");
-                    }
+                    //}
 
                     //go back to menu
                 } else if (menu_option == 2) {
@@ -1091,14 +1091,14 @@ public class App {
                         "------------------------------------------\r\n" + //
                         "        Your Supplies \r\n" + //
                         "\r\n" + //
-                        "oxen                " + oxen.getCount() + "\r\n" + //
-                        "sets of clothes     " + clothing.getCount() + "\r\n" + //
-                        "bullets             " + bullets.getCount() + "\r\n" + //
-                        "wagon wheels        " + wheel.getCount() + "\r\n" + //
-                        "wagon axles         " + axle.getCount() + "\r\n" + //
-                        "wagon tongues       " + tongue.getCount() + "\r\n" + //
-                        "pounds of food      " + food.getCount() + "\r\n" + //
-                        "money left          " + wagon.getMoneyLeft() + "\r\n" + //
+                        "oxen                " /*+ oxen.getCount()*/ + "\r\n" + //
+                        "sets of clothes     " /*+ clothing.getCount()*/ + "\r\n" + //
+                        "bullets             " /*+ bullets.getCount()*/ + "\r\n" + //
+                        "wagon wheels        " /*+ wheel.getCount()*/ + "\r\n" + //
+                        "wagon axles         " /*+ axle.getCount()*/ + "\r\n" + //
+                        "wagon tongues       " /*+ tongue.getCount()*/ + "\r\n" + //
+                        "pounds of food      " /*+ food.getCount()*/ + "\r\n" + //
+                        "money left          " /*+ wagon.getMoneyLeft()*/ + "\r\n" + //
                         "\r\n" + //
                         "Press SPACE BAR to continue\r\n" + //
                         "------------------------------------------\r\n\r\n\r\n");
@@ -1197,7 +1197,7 @@ public class App {
                     //buy supplies at forts
                 } else if (menu_option == 10) {
                     //hunt for food (extra)  
-                    wagon.huntForFood(bullets, food); 
+                    //wagon.huntForFood(bullets, food); 
                 } else {
                     System.out.println("Invalid choice, try again.");
                 }
