@@ -1,7 +1,7 @@
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import java.beans.Transient;
+import java.util.ArrayList;
 
 import static org.junit.Assert.assertFalse;
 import org.junit.Test;
@@ -12,73 +12,73 @@ public class Tests {
 
     @Test
     public void testUpdateHealth() {
-        WagonMember.updateHealth("Steady", "Filling");
-        assertEquals(health, 2);
-        assertEquals(spacesPerDay, 2);
-        WagonMember.updateHealth("Strenuous", "Meager");
-        assertEquals(health, 1);
-        assertEquals(spacesPerDay, 3);
-        WagonMember.updateHealth("Grueling", "Bare Bones");
-        assertEquals(health, -1);
-        assertEquals(spacesPerDay, 4);
+        member1.updateHealth("Steady", "Filling");
+        assertEquals(member1.health, 2);
+        assertEquals(wagon.spacesPerDay, 2);
+        member1.updateHealth("Strenuous", "Meager");
+        assertEquals(member1.health, 1);
+        assertEquals(wagon.spacesPerDay, 3);
+        member1.updateHealth("Grueling", "Bare Bones");
+        assertEquals(member1.health, -1);
+        assertEquals(wagon.spacesPerDay, 4);
     }
 
     @Test
     public void testUpdateDisease() {
-        diseaseRisk = 0.6;
-        WagonMember.updateDisease();
-        assertTrue(disease != null);
-        diseaseRisk = 0.4;
-        WagonMember.updateDisease();
-        assertTrue(disease == null);
+        member1.diseaseRisk = 0.6;
+        member1.updateDisease();
+        assertTrue(member1.disease != null);
+        member1.diseaseRisk = 0.4;
+        member1.updateDisease();
+        assertTrue(member1.disease == null);
     }
 
     @Test
     public void testUpdateDiseaseRisk() {
-        immunity = true;
-        WagonMember.updateDiseaseRisk();
-        assertEquals(diseaseRisk, 0);
-        immunity = false;
-        WagonMember.updateDiseaseRisk();
-        assertEquals(diseaseRisk, 0.5);
+        member2.immunity = true;
+        member2.updateDiseaseRisk();
+        assertEquals(member2.diseaseRisk, 0, 0.1);
+        member2.immunity = false;
+        member2.updateDiseaseRisk();
+        assertEquals(member2.diseaseRisk, 0.5, 0.1);
     }
 
     @Test
     public void testUpdateImmunity() {
-        disease = Disease.getRandomDisease();
-        WagonMember.updateImmunity();
-        assertTrue(immunity);
-        disease = null;
-        WagonMember.updateImmunity();
-        assertFalse(immunity);
+        member3.disease = disease.getRandomDisease();
+        member3.updateImmunity();
+        assertTrue(member3.immunity);
+        member3.disease = null;
+        member3.updateImmunity();
+        assertFalse(member3.immunity);
     }
 
     @Test
     public void testUpdateImmunityDuration() {
-        immunity = true;
-        WagonMember.updateImmunityDuration();
-        assertEquals(immunityDuration, 5);
-        immunity = false;
-        WagonMember.updateImmunityDuration();
-        assertEquals(immunityDuration, 0);
+        member4.immunity = true;
+        member4.updateImmunityDuration();
+        assertEquals(member4.immunityDuration, 5);
+        member4.immunity = false;
+        member4.updateImmunityDuration();
+        assertEquals(member4.immunityDuration, 0);
     }
 
     @Test
     public void testUpdateStarving() {
-        rations = "Bare Bones";
-        WagonMember.updateStarving();
-        assertTrue(starving);
-        rations = "Filling";
-        WagonMember.updateStarving();
-        assertFalse(starving);
+        member5.rations = "Bare Bones";
+        member5.updateStarving();
+        assertTrue(member5.starving);
+        member5.rations = "Filling";
+        member5.updateStarving();
+        assertFalse(member5.starving);
     }
 
     @Test
     public void testDie() {
-        health = 0;
-        alive = true;
-        WagonMember.die();
-        assertFalse(alive);
+        member1.health = 0;
+        member1.alive = true;
+        member1.die();
+        assertFalse(member1.alive);
     }
 
     @Test
@@ -88,6 +88,7 @@ public class Tests {
         assertEquals(5, oxen.getCount());
     }
 
+    Disease disease = new Disease("Dysentery", 5, 5);
     WagonMember member1 = new WagonMember();
     WagonMember member2 = new WagonMember();
     WagonMember member3 = new WagonMember();
@@ -107,7 +108,7 @@ public class Tests {
     public void checkMoneyAfterSelling(){
         ClothingSet clothes  = new ClothingSet();
         store.sell("clothes", 6, wagon, clothes);
-        assertEquals(1540, wagon.getMoney(), 0.001);
+        assertEquals(1540, wagon.getMoneyLeft(), 0.001);
     }
 
     @Test

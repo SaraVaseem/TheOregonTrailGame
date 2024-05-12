@@ -25,14 +25,14 @@ public class WagonMember extends Wagon {
         this.starving = false;
     }
 
-    public static void die() {
+    public void die() {
         if(this.health==0) {
             this.alive = false;
         }
         System.out.println(this.name + " has died.");
     }
 
-    public static void updateHealth(String pace, String rations) {
+    public void updateHealth(String pace, String rations) {
         if(pace.equals("Steady")) {
             this.health += 2;
             this.spacesPerDay += 2;
@@ -55,13 +55,13 @@ public class WagonMember extends Wagon {
         }
     }
 
-    public static void updateDisease() {
+    public void updateDisease() {
         if(this.diseaseRisk > 0.5) {
-            this.disease = Disease.getRandomDisease();
+            this.disease = this.disease.getRandomDisease();
         }
     }
 
-    public static void updateDiseaseRisk() {
+    public void updateDiseaseRisk() {
         if(this.immunity) {
             this.diseaseRisk = 0;
         } else {
@@ -69,13 +69,13 @@ public class WagonMember extends Wagon {
         }
     }
 
-    public static void updateImmunity() {
+    public void updateImmunity() {
         if(this.disease != null) {
             this.immunity = disease.isContagious();
         }
     }
 
-    public static void updateImmunityDuration() {
+    public void updateImmunityDuration() {
         if(this.immunity) {
             this.immunityDuration = 5;
         } else {
@@ -83,7 +83,7 @@ public class WagonMember extends Wagon {
         }
     }
 
-    public static void updateStarving() {
+    public void updateStarving() {
         if(rations.equals("Bare Bones")) {
             this.starving = true;
         } else {
