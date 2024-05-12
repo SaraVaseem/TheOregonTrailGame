@@ -3,8 +3,8 @@ import java.util.Random;
 
 public class Wagon {
     private String pace;
-    private int spacesPerDay;
-    private String rations;
+    protected int spacesPerDay;
+    protected String rations;
     private int livingMembers;
     protected ArrayList<WagonMember> listOfMembers = new ArrayList<>();
     private double moneyLeft;

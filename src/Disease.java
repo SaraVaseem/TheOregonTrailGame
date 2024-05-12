@@ -14,26 +14,26 @@ public class Disease extends WagonMember {
         this.duration = duration;
     }
 
-    public static Disease getRandomDisease() {
+    public Disease getRandomDisease() {
         // return a random disease
         Random rand = new Random();
         return new Disease(diseaseNames[rand.nextInt(diseaseNames.length)], rand.nextInt(10), rand.nextInt(10));
     }
 
-    public static boolean isContagious() {
+    public boolean isContagious() {
         // return true if the disease is contagious
         return this.severity > 5;
     }
 
-    public static String getName() {
+    public String getName() {
         return this.name;
     }
 
-    public static int getSeverity() {
+    public int getSeverity() {
         return this.severity;
     }
 
-    public static void updateDuration() {
+    public void updateDuration() {
         this.duration--;
         if(this.duration == 0) {
             this.disease = null;
