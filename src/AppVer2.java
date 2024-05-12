@@ -595,7 +595,7 @@ public class AppVer2 {
                         "\r\n" + //
                         "------------------------------------------\r\n" + //
                         "change food rations \r\n" + //
-                        "(currently " /*+ ration*/ + ")\r\n" + //
+                        "(currently " + wagon.getRations() + ")\r\n" + //
                         "\r\n" + //
                         "The amount of food the people in your party eat \r\n" + //
                         "each day can change. These amounts are: \r\n" + //
