@@ -14,28 +14,20 @@ public class ShoppingCart {
     }
 
     public double getPrice(int index) {
-        switch(index) {
-            case 1 :
-                return 20;
-                break;
-            case 2 :
-                return .2;
-                break;
-            case 3 :
-                return 10;
-                break;
-            case 4 :
-                return .1;
-                break;
-            case 5 :
-                return 10;
-                break;
-            case 6 :
-                return 10;
-                break;
-            case 7 :
-                return 10;
-                break;
+        if(index == 1) {
+            return 20;
+        } else if (index == 2) {
+            return .2;
+        } else if(index == 3) {
+            return 10;
+        } else if(index == 4) {
+            return .1;
+        } else if(index == 5) {
+            return 10;
+        } else if(index == 6) {
+            return 10;
+        } else if(index == 7) {
+            return 10;
         }
         return 0;
     }

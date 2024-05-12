@@ -115,15 +115,15 @@ public class newMainOregonTrailMethod {
 
         switch(choice) {
             case 1 :
-                money = 1600;
+                money = 1600.0;
                 occupation = "Banker";
                 break;
             case 2 :
-                money = 800;
+                money = 800.0;
                 occupation = "Carpenter";
                 break;
             case 3 :
-                money = 400;
+                money = 400.0;
                 occupation = "Farmer";
                 break;
             case 4 :
@@ -248,60 +248,90 @@ public class newMainOregonTrailMethod {
     }
 
     private static void mattsGeneralStore() {
+        double total = 0.0;
+        for(int i = 0; i < 7; i++) {
+            total += (shoppingCart.getCount(i) * shoppingCart.getPrice(i + 1));
+        }
+
         System.out.println("Here's what you've got so far:\n"
-        + "1. Oxen: $" + (shoppingCart.getCount(1) * shoppingCart.getPrice(1)) + "\n"
-        + "2. Food: $" + (shoppingCart.getCount(2) * shoppingCart.getPrice(2)) + "\n"
-        + "3. Clothes: $" + (shoppingCart.getCount(3) * shoppingCart.getPrice(3)) + "\n"
-        + "4. Bullets: $" + (shoppingCart.getCount(4) * shoppingCart.getPrice(4)) + "\n"
-        + "5. Axles: $" + (shoppingCart.getCount(5) * shoppingCart.getPrice(5)) + "\n"
-        + "6. Tongues: $" + (shoppingCart.getCount(6) * shoppingCart.getPrice(6)) + "\n"
-        + "7. Wheels: $" + (shoppingCart.getCount(7) * shoppingCart.getPrice(7)) + "\n"
+        + "1. Oxen: $" + (shoppingCart.getCount(0) * shoppingCart.getPrice(1)) + "\n"
+        + "2. Food: $" + (shoppingCart.getCount(1) * shoppingCart.getPrice(2)) + "\n"
+        + "3. Clothes: $" + (shoppingCart.getCount(2) * shoppingCart.getPrice(3)) + "\n"
+        + "4. Bullets: $" + (shoppingCart.getCount(3) * shoppingCart.getPrice(4)) + "\n"
+        + "5. Axles: $" + (shoppingCart.getCount(4) * shoppingCart.getPrice(5)) + "\n"
+        + "6. Tongues: $" + (shoppingCart.getCount(5) * shoppingCart.getPrice(6)) + "\n"
+        + "7. Wheels: $" + (shoppingCart.getCount(6) * shoppingCart.getPrice(7)) + "\n"
+        + "\n Total: $" + total
         + "\n What would you like to buy? (Select by entering a corresponding number, type 8 to check out)");
 
         int choice = sc.nextInt();
         int newChoice;
+        String checkout;
 
         switch(choice) {
             case 1 :
                 System.out.println("\r\n\r\n------------------------------------------\r\n        Matt's General Store\r\n        Independence, Missouri\r\n                 April 1, 1848\r\n\r\nThere are 2 oxen in a yoke; I recommend at least 3 yoke.\r\nI charge $40 a yoke.\r\n\r\nHow many yoke do you want ?");
                 newChoice = sc.nextInt();
-                shoppingCart.setShoppingCart(choice, newChoice);
+                shoppingCart.setShoppingCart(choice - 1, newChoice * 2);
                 mattsGeneralStore();
                 break;
             case 2 :
-                System.out.println("\r\n\r\n\r\n\r\n------------------------------------------\r\n        Matt's General Store\r\n        Independence, Missouri\r\n                 April 1, 1848\r\n\r\nI recommend you take at least 200 pounds of food for each person in your family.;\r\nI see that you have 5 people in all. You'll need flour, sugar, bacon, and coffee.\r\nMy price is 20 cents per pound.\r\n\r\nHow many pounds of food do you want ?");
+                System.out.println("\r\n\r\n\r\n\r\n------------------------------------------\r\n        Matt's General Store\r\n        Independence, Missouri\r\n                 April 1, 1848\r\n\r\nI recommend you take at least 200 pounds of food for each person in your family.\r\nI see that you have 5 people in all. You'll need flour, sugar, bacon, and coffee.\r\nMy price is 20 cents per pound.\r\n\r\nHow many pounds of food do you want ?");
                 newChoice = sc.nextInt();
-                shoppingCart.setShoppingCart(choice, newChoice);
+                shoppingCart.setShoppingCart(choice - 1, newChoice);
                 mattsGeneralStore();
                 break;
             case 3 :
                 System.out.println("\r\n\r\n\r\n\r\n------------------------------------------\r\n        Matt's General Store\r\n        Independence, Missouri\r\n                 April 1, 1848\r\n\r\nyou'll need warm clothing in the mountains. \r\nI recommend taking at least 2 sets of clothes per person.\r\nEach set is $10.00.\r\n\r\nHow many sets of clothes do you want ?");
                 newChoice = sc.nextInt();
-                shoppingCart.setShoppingCart(choice, newChoice);
+                shoppingCart.setShoppingCart(choice - 1, newChoice);
                 mattsGeneralStore();
                 break;
             case 4 :
                 System.out.println("\r\n\r\n\r\n\r\n------------------------------------------\r\n        Matt's General Store\r\n        Independence, Missouri\r\n                 April 1, 1848\r\n\r\nI sell ammunition in boxes of 20 bullets.\r\nEach box costs $2.00.\r\n\r\nHow many boxes do you want?");
                 newChoice = sc.nextInt();
-                shoppingCart.setShoppingCart(choice, newChoice);
+                shoppingCart.setShoppingCart(choice - 1, newChoice * 20);
                 mattsGeneralStore();
                 break;
             case 5 :
-
+                System.out.println("------------------------------------------\r\n\r\n\r\n\r\n------------------------------------------\r\n        Matt's General Store\r\n        Independence, Missouri\r\n\r\nIt's a good idea to have a few spare parts for your wagon.\r\nHere are the prices:\r\n\r\n    wagon wheel -   $10 each\r\n    wagon axle -    $10 each \r\n    wagon tongue -  $10 each\r\n\r\nHow many wagon axles?");
+                newChoice = sc.nextInt();
+                shoppingCart.setShoppingCart(choice - 1, newChoice);
+                mattsGeneralStore();
             case 6 :
-
+                System.out.println("------------------------------------------\r\n\r\n\r\n\r\n------------------------------------------\r\n        Matt's General Store\r\n        Independence, Missouri\r\n\r\nIt's a good idea to have a few spare parts for your wagon.\r\nHere are the prices:\r\n\r\n    wagon wheel -   $10 each\r\n    wagon axle -    $10 each \r\n    wagon tongue -  $10 each\r\n\r\nHow many wagon tongues?");
+                newChoice = sc.nextInt();
+                shoppingCart.setShoppingCart(choice - 1, newChoice);
+                mattsGeneralStore();
             case 7 :
-
+                System.out.println("------------------------------------------\r\n\r\n\r\n\r\n------------------------------------------\r\n        Matt's General Store\r\n        Independence, Missouri\r\n\r\nIt's a good idea to have a few spare parts for your wagon.\r\nHere are the prices:\r\n\r\n    wagon wheel -   $10 each\r\n    wagon axle -    $10 each \r\n    wagon tongue -  $10 each\r\n\r\nHow many wagon wheels?");
+                newChoice = sc.nextInt();
+                shoppingCart.setShoppingCart(choice - 1, newChoice);
+                mattsGeneralStore();
             case 8 :
-
+                if(total <= money) {
+                    System.out.println("\n The total will be $" + total + ". Are you sure you have everything you need?");
+                    checkout = sc.next();
+                    if(checkout.equals("yes") || checkout.equals("y")) {
+                        money -= total;
+                        inventory = new NewInventory(shoppingCart.getCount(0), shoppingCart.getCount(1), shoppingCart.getCount(2), shoppingCart.getCount(3), shoppingCart.getCount(4), shoppingCart.getCount(5), shoppingCart.getCount(6));
+                        wagon = new Wagon(wagonLeader, member1, member2, member3, member4, money, inventory);
+                    } else {
+                        mattsGeneralStore();
+                    }
+                } else {
+                    System.out.println("\n You don't have enough money for all this! Make some changes to your shopping cart and try again. \n");
+                    mattsGeneralStore();
+                }
+                break;
             default :
-                System.out.println("Please enter a valid option.");
+                System.out.println("\n Please enter a valid option. \n");
                 mattsGeneralStore();
                 break;
         }
     }
 
     private static void travelTheTrail() {
-
+        System.out.println("\n Test completed! (work on trail gameplay) \n");
     }
 }

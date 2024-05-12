@@ -15,13 +15,13 @@ public class Wagon {
     private boolean wagonFunctional;
     private int points;
     private int pointMultiplier;
-    private newInventory inv;
+    private NewInventory inv;
 
     public Wagon() {
 
     }
 
-    public Wagon(WagonLeader leader, WagonMember member1, WagonMember member2, WagonMember member3, WagonMember member4, int money, newInventory inv){
+    public Wagon(WagonLeader leader, WagonMember member1, WagonMember member2, WagonMember member3, WagonMember member4, double money, NewInventory inv){
         this.leader = leader;
         this.member1 = member1;
         this.member2 = member2;
