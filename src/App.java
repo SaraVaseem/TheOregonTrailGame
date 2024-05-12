@@ -270,11 +270,11 @@ public class App {
             " April 1, 1848\r\n" +
             "\r\n" +
             "-----------------------------------------\r\n" +
-            "1. Oxen                     $ " /*+ oxen.getCount()*/ + "\r\n" +
-            "2. food                     $ " /*+ food.getCount()*/ + "\r\n" +
-            "3. clothing                 $ " /*+ clothing.getCount()*/ + "\r\n" +
-            "4. ammunition               $ " /*+ bullets.getCount()*/ + "\r\n" +
-            "5. spare parts              $ " /*+ wheel.getCount()+tongue.getCount()+axle.getCount()*/ + "\r\n" +
+            "1. Oxen                     $ 0.00 " /*+ oxen.getCount()*/ + "\r\n" +
+            "2. food                     $ 0.00 " /*+ food.getCount()*/ + "\r\n" +
+            "3. clothing                 $ 0.00 " /*+ clothing.getCount()*/ + "\r\n" +
+            "4. ammunition               $ 0.00 " /*+ bullets.getCount()*/ + "\r\n" +
+            "5. spare parts              $ 0.00 " /*+ wheel.getCount()+tongue.getCount()+axle.getCount()*/ + "\r\n" +
             "6. checkout cart\r\n" +
             "----------------------------------------\r\n" +
             "Total bill: $0.00\r\n" +
@@ -287,7 +287,7 @@ public class App {
                 int store_choice = myObj.nextInt();
 
             //add Matt's store functionality
-            if (store_choice == 1) {
+            //if (store_choice == 1) {
                 
                 int num_of_yokes = -1;
                 while(num_of_yokes < 0){
@@ -308,10 +308,10 @@ public class App {
                 }
                 //store.sell("oxen", num_of_yokes, wagon, oxen);
                 System.out.println("\r\n" +
-                    "            Bill so far: "/*+ store.getTotalCost()*/ );
+                    "            Bill so far: $0.00 "/*+ store.getTotalCost()*/ );
                 //go back to main store
 
-                } else if (store_choice == 2) {
+                //} else if (store_choice == 2) {
                     int pounds_of_food = -1;
                     while(pounds_of_food< 0){
                         System.out.println("\r\n" +
@@ -333,10 +333,10 @@ public class App {
                     }
                     //store.sell("food", pounds_of_food, wagon, food);
                     System.out.println("\r\n" +
-                        "            Bill so far: " /*+store.getTotalCost()*/);
+                        "            Bill so far: $0.00 " /*+store.getTotalCost()*/);
                     //go back to main store
 
-                } else if (store_choice == 3) {
+                //} else if (store_choice == 3) {
                     int sets_of_clothing = -1;
                     while(sets_of_clothing < 0){
                         System.out.println("\r\n" + //
@@ -359,10 +359,10 @@ public class App {
 
                     //store.sell("clothes", sets_of_clothing, wagon, clothing);
                     System.out.println("\r\n" +
-                        "            Bill so far: "/*+store.getTotalCost()*/);
+                        "            Bill so far: $0.00"/*+store.getTotalCost()*/);
                     //go back to main store
 
-                } else if (store_choice == 4) {
+                //} else if (store_choice == 4) {
                     int boxes_of_ammo = -1;
                     while(boxes_of_ammo < 0){
                         System.out.println("\r\n" +
@@ -385,10 +385,10 @@ public class App {
 
                     //store.sell("bullets", boxes_of_ammo, wagon, bullets);
                     System.out.println("\r\n" +
-                        "            Bill so far: "/*+store.getTotalCost()*/);
+                        "            Bill so far: $0.00"/*+store.getTotalCost()*/);
                     //go back to main store
 
-                } else if (store_choice == 5) {
+                //} else if (store_choice == 5) {
                     System.out.println("------------------------------------------\r\n" +
                     "\r\n" +
                     "\r\n" +
@@ -443,9 +443,9 @@ public class App {
                     // store.sell("axle", axles, wagon, axle);
                     // store.sell("tongue", tongues, wagon, tongue);
                     System.out.println("\r\n" +
-                        "            Bill so far: "/*+ store.getTotalCost()*/);
+                        "            Bill so far: $0.00"/*+ store.getTotalCost()*/);
                     //go back to main store
-                } else if (store_choice == 6) {
+                //} else if (store_choice == 6) {
                     //add items to invemtory & subtract from money left
                     System.out.println("------------------------------------------\r\n" +
                         "\r\n" +
@@ -460,9 +460,9 @@ public class App {
                         "\r\n" +
                         "Press SPACE BAR to continue\r\n" +
                         "------------------------------------------");
-                } else {
-                    System.out.println("Invalid choice, try again.");
-                }
+                // } else {
+                //     System.out.println("Invalid choice, try again.");
+                // }
             } catch(InputMismatchException e){
                 myObj.nextLine();
                 System.out.println("Invalid choice, try again.");
@@ -1080,7 +1080,9 @@ public class App {
                             "\n" +
                             "Willamette Valley\n" +
                             "June 30, 1848\n" +
-                            "\n");
+                            "\n"
+                            );
+                            gameIsNotOver = false;
                     //}
 
                     //go back to menu
